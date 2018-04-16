@@ -43,15 +43,8 @@
 //})(jQuery); // End of use strict
 
 $(document).ready(function() {
-    $("#showcase .banner").hover(function(){
-        $("#projectBanner").removeClass("grey");
-        console.log("moi");
-    });
+
     
-    $("#showcase .banner").mouseleave(function(){
-        $("#projectBanner").addClass("grey");
-        console.log("moi");
-    });
     
     $("#btnViewProject").click(function(){ 
        $("#showcase").goTo(function(){
@@ -62,10 +55,19 @@ $(document).ready(function() {
     
     $(window).scroll(function(){
         $("#showcase .double-page-parent").removeClass("show-right-half");
+        $("#design .double-page-parent").removeClass("show-right-half");
     });
     
     //Flip containers
     var intervalID = setInterval(flip, 7000);
+
+    //Design Icons
+    $(".design-icon").click(function(){ 
+       $("#design").goTo(function(){
+           $("#design .double-page-parent").addClass("show-right-half");                
+        });
+       
+    });
     
 });
 

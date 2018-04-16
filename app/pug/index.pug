@@ -41,7 +41,7 @@ html(lang="en")
             div.container.text-center
                 img(src="img/logo.svg")
         //Design
-        section#design.bg-white.text-black.text-center.centre-y 
+        //section#design.bg-white.text-black.text-center.centre-y 
             .container
                 .row
                     .col-md-4.mb-5.mb-lg-5
@@ -56,6 +56,28 @@ html(lang="en")
                         img.design-icon(src="img/icons/vl.svg")
                     .col-md-4.mb-lg-5
                         img.design-icon(src="img/icons/dogma.svg")
+        .double-page-section#design.text-center
+            .double-page-parent
+                .double-page-child.db-left.centre-y
+                    .container
+                        .row
+                            .col-md-4.mb-5.mb-lg-5
+                                img.mb-5.design-icon(src="img/icons/mep.svg")
+                            .col-md-4.mb-5.mb-lg-5
+                                img.mb-5.design-icon(src="img/icons/hs.svg")
+                            .col-md-4.mb-5.mb-lg-5
+                                img.mb-5.design-icon(src="img/icons/im.svg")
+                            .col-md-4.mb-5.mb-lg-1
+                                img.design-icon(src="img/icons/bw.svg")
+                            .col-md-4.mb-lg-5
+                                img.design-icon(src="img/icons/vl.svg")
+                            .col-md-4.mb-lg-5
+                                img.design-icon(src="img/icons/dogma.svg")
+                .double-page-child.db-right.centre-y
+                    .container
+                        h1 Bespoke brand design
+                        p From Olympic athletes to internationally accredited doctors to craft beer breweries.
+                        p Tourmalet Media helps distinguished individuals and brands present themselves as such.
         //Showcase
         .double-page-section#showcase
             .double-page-parent
@@ -83,9 +105,9 @@ html(lang="en")
                                 span.carousel-control-next-icon
                         //p.info-tag scroll to close
         //Web
-        section#web.bg-white.text-black.centre-xy
+        section#web.bg-white.text-black.centre-y
             .container
-                .row
+                //.row
                     .col-md-12
                         span.pull-right.pb-5 
                             h3.d-inline WEB | 
@@ -96,23 +118,29 @@ html(lang="en")
                         .flip-container
                             .flipper
                                 .front
-                                    img.web-icon(src="img/previews/painclinic.png")
+                                    a(href="https://www.helderbergpainclinic.co.za", target="_blanc")
+                                        img.web-icon(src="img/previews/painclinic.png")
                                 .back.centre-x
-                                    img.web-icon(src="img/previews/mpainclinic.png")
+                                    a(href="https://www.helderbergpainclinic.co.za", target="_blanc")
+                                        img.web-icon(src="img/previews/mpainclinic.png")
                     .col-md-4.mb-5.mb-md-0
                         .flip-container
                             .flipper
                                 .front
-                                    img.web-icon(src="img/previews/mca.png")
+                                    a(href="https://www.marizaancarstens.co.za", target="_blanc")
+                                        img.web-icon(src="img/previews/mca.png")
                                 .back.centre-x
-                                    img.web-icon(src="img/previews/mmca.png")
+                                    a(href="https://www.marizaancarstens.co.za", target="_blanc")
+                                        img.web-icon(src="img/previews/mmca.png")
                     .col-md-4.mb-5.mb-md-0
                         .flip-container
                             .flipper
                                 .front
-                                    img.web-icon(src="img/previews/cavemancafe.png")
+                                    a(href="htts://www.cavemancafe.com", target="_blanc")
+                                        img.web-icon(src="img/previews/cavemancafe.png")
                                 .back.centre-x
-                                    img.web-icon(src="img/previews/mcavemancafe.png")
+                                    a(href="http://www.cavemancafe.com", target="_blanc")
+                                        img.web-icon(src="img/previews/mcavemancafe.png")
         //Contact
         section#contact.text-center.pb-5
             img.d-inline(src="img/logo.svg")
@@ -122,10 +150,6 @@ html(lang="en")
         // Footer
         footer.footer.text-center
             .container-full
-                //ul.list-inline.mb-5
-                    each val in ["phonak","oticon","cochlear","sivantos","unitron"]
-                        li.list-inline-item.allign-middle.mr-5.mb-5
-                            img.brandlogo(src="img/brands/"+val+".png")
                 a.text-muted.small.mb-0(href="mailto:dehanlouw@icloud.com") Copyright © Tourmalet Media 2018
         // Scroll to Top Button
         a.scroll-to-top.rounded.js-scroll-trigger(href="#page-top")
