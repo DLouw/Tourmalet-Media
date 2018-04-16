@@ -38,6 +38,11 @@ body {
   justify-content: center;
 }
 
+.centre-x{
+  display: flex;
+  justify-content: center;
+}
+
 .content-section-heading {
 
   h2 {
@@ -120,4 +125,42 @@ h6 {
             height: 100%; 
         }
         
-    }
+}
+
+
+//Double page layout
+
+.double-page-section{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.double-page-parent{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    transition: all 0.4s ease-out;
+}
+
+.double-page-child{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+
+.show-right-half{
+    left: -100% !important;
+}
+
+.db-left{
+    left: 0%;
+}
+
+.db-right{
+    left: 100%;
+}

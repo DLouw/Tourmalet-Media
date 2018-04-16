@@ -32,6 +32,10 @@ body {
   flex-direction: column;
   justify-content: center; }
 
+.centre-x {
+  display: flex;
+  justify-content: center; }
+
 .content-section-heading h2 {
   font-size: 3rem; }
 
@@ -89,6 +93,34 @@ h6 {
     display: inline;
     height: 100%; }
 
+.double-page-section {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+
+.double-page-parent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  transition: all 0.4s ease-out; }
+
+.double-page-child {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; }
+
+.show-right-half {
+  left: -100% !important; }
+
+.db-left {
+  left: 0%; }
+
+.db-right {
+  left: 100%; }
+
 .masthead {
   min-height: 30rem;
   position: relative;
@@ -124,7 +156,7 @@ h6 {
   -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   transform: translateX(250px);
-  background: rgba(10, 10, 10, 0.5);
+  background: black;
   border-left: 1px solid rgba(255, 255, 255, 0.1); }
 
 .sidebar-nav {
@@ -209,7 +241,7 @@ h6 {
   #web .flip-container.flip .flipper, #web .flip-container.hover .flipper {
     transform: rotateY(180deg); }
   #web .flip-container, #web .front, #web .back {
-    width: 200px;
+    width: 150px;
     height: 150px; }
   #web .flipper {
     transition: 0.6s;
@@ -228,9 +260,11 @@ h6 {
     transform: rotateY(180deg); }
 
 #design {
-  position: relative; }
+  position: relative;
+  min-height: 100%; }
   #design .design-icon {
     height: 5rem;
+    max-width: 7rem;
     font-size: 2.25rem; }
 
 #landing {
@@ -246,26 +280,7 @@ h6 {
       width: 450px; } }
 
 #showcase {
-  z-index: 0;
-  overflow: hidden;
-  position: relative;
-  color: silver;
-  font-weight: 100; }
-  #showcase .double-page-parent {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    left: 0%;
-    transition: all 0.4s ease-out; }
-  #showcase .double-page-child {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0; }
-  #showcase .db-left {
-    left: 0%; }
-  #showcase .db-right {
-    left: 100%; }
+  color: silver; }
   #showcase .carousel #item1 {
     background-image: url(../img/henri.jpg); }
   #showcase .carousel #item2 {
@@ -275,45 +290,12 @@ h6 {
   #showcase .carousel-item {
     background-position: center;
     background-repeat: no-repeat; }
-  #showcase .double-page-container {
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    width: 100%;
-    height: 100%; }
-    @media (min-width: 768px) {
-      #showcase .double-page-container {
-        width: 750px;
-        height: 400px; } }
-    @media (min-width: 992px) {
-      #showcase .double-page-container {
-        width: 970px;
-        height: 500px; } }
-    @media (min-width: 1200px) {
-      #showcase .double-page-container {
-        width: 1170px;
-        height: 600px; } }
-    #showcase .double-page-container .info-tag {
-      position: absolute;
-      top: 100%;
-      right: 100; }
-  #showcase .show-right-half {
-    left: -100% !important; }
   #showcase #henri-preview {
-    position: relative;
     background-image: url(../img/henri_grey.jpg);
-    background-position: left;
-    filter: grayscale(0%); }
+    background-position: left; }
 
 #contact img {
   width: 180px; }
-
-#contact a {
-  transition: all 3s ease-out; }
-
-#contact a:hover {
-  text-decoration: none !important;
-  color: black !important; }
 
 .portfolio-item {
   display: block;
@@ -360,7 +342,7 @@ h6 {
         -webkit-clip-path: inset(2rem);
         clip-path: inset(2rem); }
       .portfolio-item:hover .caption {
-        background-color: rgba(10, 10, 10, 0.4);
+        background-color: rgba(0, 0, 0, 0.9);
         -webkit-clip-path: inset(2rem);
         clip-path: inset(2rem); } }
 
@@ -377,25 +359,26 @@ footer.footer {
         max-height: 100px; } }
 
 a {
-  color: rgba(10, 10, 10, 0.5); }
+  color: black; }
   a:hover, a:focus, a:active {
-    color: rgba(0, 0, 0, 0.5); }
+    color: silver !important;
+    text-decoration: none; }
 
 .btn-primary {
-  background-color: rgba(10, 10, 10, 0.5) !important;
+  background-color: black !important;
   border-color: silver !important;
   color: silver !important; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    border-color: rgba(0, 0, 0, 0.5) !important; }
+    background-color: black !important;
+    border-color: black !important; }
 
 .btn-secondary {
-  background-color: #806600 !important;
-  border-color: #806600 !important;
+  background-color: silver !important;
+  border-color: silver !important;
   color: #fff !important; }
   .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
-    background-color: #4d3d00 !important;
-    border-color: #4d3d00 !important; }
+    background-color: #a7a7a7 !important;
+    border-color: #a7a7a7 !important; }
 
 .btn-dark {
   color: #fff !important; }
@@ -405,13 +388,13 @@ a {
   font-weight: 700; }
 
 .bg-primary {
-  background-color: rgba(10, 10, 10, 0.5) !important; }
+  background-color: black !important; }
 
 .text-primary {
-  color: rgba(10, 10, 10, 0.5) !important; }
+  color: black !important; }
 
 .text-secondary {
-  color: #806600 !important; }
+  color: silver !important; }
 
 body {
   font-family: 'Lato', sans-serif; }
@@ -444,3 +427,29 @@ h4 {
   position: relative;
   width: 200%;
   max-width: 100000px !important; }
+
+a {
+  transition: all 1s ease-out; }
+
+.double-page-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  @media (min-width: 768px) {
+    .double-page-container {
+      width: 750px;
+      height: 400px; } }
+  @media (min-width: 992px) {
+    .double-page-container {
+      width: 970px;
+      height: 500px; } }
+  @media (min-width: 1200px) {
+    .double-page-container {
+      width: 1170px;
+      height: 600px; } }
+  .double-page-container .info-tag {
+    position: absolute;
+    bottom: 2%;
+    right: 2%; }

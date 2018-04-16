@@ -41,11 +41,8 @@ html(lang="en")
             div.container.text-center
                 img(src="img/logo.svg")
         //Design
-        section#design.h-100.bg-white.text-black.text-center.centre-y 
+        section#design.bg-white.text-black.text-center.centre-y 
             .container
-                //.row
-                    .col-md-12
-                        h3.pull-right.pb-5 DESIGN
                 .row
                     .col-md-4.mb-5.mb-lg-5
                         img.mb-5.design-icon(src="img/icons/mep.svg")
@@ -60,7 +57,7 @@ html(lang="en")
                     .col-md-4.mb-lg-5
                         img.design-icon(src="img/icons/dogma.svg")
         //Showcase
-        section#showcase.h-100.w-100
+        .double-page-section#showcase
             .double-page-parent
                 .double-page-child.db-left.centre-y
                     .double-page-container#henri-preview.p-3
@@ -84,40 +81,43 @@ html(lang="en")
                                 span.carousel-control-prev-icon
                             a.carousel-control-next(href='#demo', data-slide='next')
                                 span.carousel-control-next-icon
-                        p.info-tag scroll to close
+                        //p.info-tag scroll to close
         //Web
-        section#web.content-section.bg-white.text-black.text-center
-            .container.mb-3-mt-3
+        section#web.bg-white.text-black.centre-xy
+            .container
                 .row
                     .col-md-12
-                        h3.pull-right.pb-5 WEB | mobile first
+                        span.pull-right.pb-5 
+                            h3.d-inline WEB | 
+                            a.d-inline(href="")
+                                h3.d-inline mobile first
                 .row
-                    .col-md-4.mb-5.mb-lg-5
-                        .flip-container#flip1
+                    .col-md-4.mb-5.mb-md-0
+                        .flip-container
                             .flipper
                                 .front
                                     img.web-icon(src="img/previews/painclinic.png")
-                                .back
+                                .back.centre-x
                                     img.web-icon(src="img/previews/mpainclinic.png")
-                    .col-md-4.mb-5.mb-lg-5
+                    .col-md-4.mb-5.mb-md-0
                         .flip-container
                             .flipper
                                 .front
                                     img.web-icon(src="img/previews/mca.png")
-                                .back
+                                .back.centre-x
                                     img.web-icon(src="img/previews/mmca.png")
-                    .col-md-4.mb-5.mb-lg-5
+                    .col-md-4.mb-5.mb-md-0
                         .flip-container
                             .flipper
                                 .front
                                     img.web-icon(src="img/previews/cavemancafe.png")
-                                .back
+                                .back.centre-x
                                     img.web-icon(src="img/previews/mcavemancafe.png")
         //Contact
         section#contact.text-center.pb-5
             img.d-inline(src="img/logo.svg")
             h1.d-inline.ml-5 |
-            a.text-muted(href="mailto:dehanlouw@icloud.com")
+            a(href="mailto:dehanlouw@icloud.com")
                 h2.d-inline.ml-5 contact
         // Footer
         footer.footer.text-center

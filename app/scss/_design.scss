@@ -1,8 +1,10 @@
 #design{
     position: relative;
+    min-height: 100%;
 
     .design-icon {
       height: 5rem;
+      max-width: 7rem;
       font-size: 2.25rem;
 
     }

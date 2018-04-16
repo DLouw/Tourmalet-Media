@@ -3,7 +3,8 @@ a {
   &:hover,
   &:focus,
   &:active {
-    color: darken($primary, 10%);
+    color: silver !important;
+    text-decoration: none;
   }
 }
 
