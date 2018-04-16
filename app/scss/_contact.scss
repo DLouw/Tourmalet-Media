@@ -1,0 +1,16 @@
+// Callout
+#contact {
+    img{
+        width: 180px;
+    }
+    
+    a{
+        transition: all 3s ease-out;
+    }
+    
+    a:hover{
+        text-decoration: none !important;
+        color: black !important;
+        
+    }
+}

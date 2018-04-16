@@ -1,0 +1,20 @@
+// Landing section
+// Landing section
+#landing {
+    background-image: url("../img/loften.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    img{
+        width: 150px;
+    }
+    
+    @media(min-width:768px){
+        
+        img{
+            width: 450px;
+        }
+    }
+}

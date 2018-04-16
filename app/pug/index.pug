@@ -1,0 +1,142 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        meta(name="description", content="")
+        meta(name="author", content="")
+        title Marizaan Carstens Audiology
+        // Bootstrap Core CSS
+        link(href="vendor/bootstrap/css/bootstrap.min.css", rel="stylesheet")
+        // Custom Fonts
+        link(href="vendor/font-awesome/css/font-awesome.min.css", rel="stylesheet", type="text/css")
+        link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic", rel="stylesheet", type="text/css")
+        link(href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet")
+        //Simple Line Icons
+        link(href="vendor/simple-line-icons/css/simple-line-icons.css", rel="stylesheet")
+        // Custom CSS
+        link(href="css/mza.min.css", rel="stylesheet")
+        //Favicon
+        link(rel="icon", href="img/favicon.png")
+    body#page-top
+        // Navigation
+        a.menu-toggle.rounded(href="#")
+            i.fa.fa-bars
+        nav#sidebar-wrapper
+            ul.sidebar-nav
+                li.sidebar-brand
+                    a.js-scroll-trigger(href="#page-top") Tourmalet
+                li.sidebar-nav-item
+                    a.js-scroll-trigger(href="#page-top") Home
+                li.sidebar-nav-item
+                    a.js-scroll-trigger(href="#about") About
+                li.sidebar-nav-item
+                    a.js-scroll-trigger(href="#services") Services
+                li.sidebar-nav-item
+                    a.js-scroll-trigger(href="#contact") Contact
+                li.sidebar-nav-item
+                    a.js-scroll-trigger(href="#Map") Map
+        // Header
+        div#landing.full-section.centre-y
+            div.container.text-center
+                img(src="img/logo.svg")
+        //Design
+        section#design.h-100.bg-white.text-black.text-center.centre-y 
+            .container
+                //.row
+                    .col-md-12
+                        h3.pull-right.pb-5 DESIGN
+                .row
+                    .col-md-4.mb-5.mb-lg-5
+                        img.mb-5.design-icon(src="img/icons/mep.svg")
+                    .col-md-4.mb-5.mb-lg-5
+                        img.mb-5.design-icon(src="img/icons/hs.svg")
+                    .col-md-4.mb-5.mb-lg-5
+                        img.mb-5.design-icon(src="img/icons/im.svg")
+                    .col-md-4.mb-5.mb-lg-1
+                        img.design-icon(src="img/icons/bw.svg")
+                    .col-md-4.mb-lg-5
+                        img.design-icon(src="img/icons/vl.svg")
+                    .col-md-4.mb-lg-5
+                        img.design-icon(src="img/icons/dogma.svg")
+        //Showcase
+        section#showcase.h-100.w-100
+            .double-page-parent
+                .double-page-child.db-left.centre-y
+                    .double-page-container#henri-preview.p-3
+                        h4.w-50.z-top Featured on the custom bike of Olympic Medalist, Henri Schoeman
+                        btn#btnViewProject.btn.btn-primary.z-top View Project
+                .double-page-child.db-right.centre-y
+                    .double-page-container#henri-details
+                        #demo.carousel.slide.h-100(data-ride='carousel')
+                            // Indicators
+                            ul.carousel-indicators
+                                li.active(data-target='#demo', data-slide-to='0')
+                                li(data-target='#demo', data-slide-to='1')
+                                li(data-target='#demo', data-slide-to='2')
+                            // The slideshow
+                            .carousel-inner.h-100
+                                #item1.carousel-item.h-100.active
+                                #item2.carousel-item.h-100
+                                #item3.carousel-item.h-100
+                            // Left and right controls
+                            a.carousel-control-prev(href='#demo', data-slide='prev')
+                                span.carousel-control-prev-icon
+                            a.carousel-control-next(href='#demo', data-slide='next')
+                                span.carousel-control-next-icon
+                        p.info-tag scroll to close
+        //Web
+        section#web.content-section.bg-white.text-black.text-center
+            .container.mb-3-mt-3
+                .row
+                    .col-md-12
+                        h3.pull-right.pb-5 WEB | mobile first
+                .row
+                    .col-md-4.mb-5.mb-lg-5
+                        .flip-container#flip1
+                            .flipper
+                                .front
+                                    img.web-icon(src="img/previews/painclinic.png")
+                                .back
+                                    img.web-icon(src="img/previews/mpainclinic.png")
+                    .col-md-4.mb-5.mb-lg-5
+                        .flip-container
+                            .flipper
+                                .front
+                                    img.web-icon(src="img/previews/mca.png")
+                                .back
+                                    img.web-icon(src="img/previews/mmca.png")
+                    .col-md-4.mb-5.mb-lg-5
+                        .flip-container
+                            .flipper
+                                .front
+                                    img.web-icon(src="img/previews/cavemancafe.png")
+                                .back
+                                    img.web-icon(src="img/previews/mcavemancafe.png")
+        //Contact
+        section#contact.text-center.pb-5
+            img.d-inline(src="img/logo.svg")
+            h1.d-inline.ml-5 |
+            a.text-muted(href="mailto:dehanlouw@icloud.com")
+                h2.d-inline.ml-5 contact
+        // Footer
+        footer.footer.text-center
+            .container-full
+                //ul.list-inline.mb-5
+                    each val in ["phonak","oticon","cochlear","sivantos","unitron"]
+                        li.list-inline-item.allign-middle.mr-5.mb-5
+                            img.brandlogo(src="img/brands/"+val+".png")
+                a.text-muted.small.mb-0(href="mailto:dehanlouw@icloud.com") Copyright © Tourmalet Media 2018
+        // Scroll to Top Button
+        a.scroll-to-top.rounded.js-scroll-trigger(href="#page-top")
+            i.fa.fa-angle-up
+            
+            
+        // Bootstrap core JavaScript
+        script(src="vendor/jquery/jquery.js")
+        script(src="vendor/bootstrap/js/bootstrap.min.js")
+        // Plugin JavaScript
+        script(src="vendor/jquery-easing/jquery.easing.min.js")
+        // Custom scripts for this template
+        script(src="js/mza.min.js")
+
