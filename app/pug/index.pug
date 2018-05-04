@@ -11,6 +11,7 @@ html(lang="en")
         // Custom Fonts
         link(href="vendor/font-awesome/css/font-awesome.min.css", rel="stylesheet", type="text/css")
         link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic", rel="stylesheet", type="text/css")
+        link(href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet")
         link(href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet")
         //Simple Line Icons
         link(href="vendor/simple-line-icons/css/simple-line-icons.css", rel="stylesheet")
@@ -37,116 +38,103 @@ html(lang="en")
                 li.sidebar-nav-item
                     a.js-scroll-trigger(href="#Map") Map
         // Header
-        div#landing.full-section.centre-y
+        #landing.full-section.centre-y
             div.container.text-center
-                img(src="img/logo.svg")
-        //Design
-        //section#design.bg-white.text-black.text-center.centre-y 
-            .container
-                .row
-                    .col-md-4.mb-5.mb-lg-5
-                        img.mb-5.design-icon(src="img/icons/mep.svg")
-                    .col-md-4.mb-5.mb-lg-5
-                        img.mb-5.design-icon(src="img/icons/hs.svg")
-                    .col-md-4.mb-5.mb-lg-5
-                        img.mb-5.design-icon(src="img/icons/im.svg")
-                    .col-md-4.mb-5.mb-lg-1
-                        img.design-icon(src="img/icons/bw.svg")
-                    .col-md-4.mb-lg-5
-                        img.design-icon(src="img/icons/vl.svg")
-                    .col-md-4.mb-lg-5
-                        img.design-icon(src="img/icons/dogma.svg")
-        .double-page-section#design.text-center
+                img.logo(src="img/logo.svg")
+        // Design
+        .double-page-section#design
             .double-page-parent
                 .double-page-child.db-left.centre-y
-                    .container
+                    .container.text-center
                         .row
-                            .col-md-4.mb-5.mb-lg-5
+                            .col-md-4
                                 img.mb-5.design-icon(src="img/icons/mep.svg")
-                            .col-md-4.mb-5.mb-lg-5
+                            .col-md-4
                                 img.mb-5.design-icon(src="img/icons/hs.svg")
-                            .col-md-4.mb-5.mb-lg-5
+                            .col-md-4
                                 img.mb-5.design-icon(src="img/icons/im.svg")
-                            .col-md-4.mb-5.mb-lg-1
+                            .col-md-4
                                 img.design-icon(src="img/icons/bw.svg")
-                            .col-md-4.mb-lg-5
+                            .col-md-4
                                 img.design-icon(src="img/icons/vl.svg")
-                            .col-md-4.mb-lg-5
+                            .col-md-4
                                 img.design-icon(src="img/icons/dogma.svg")
-                .double-page-child.db-right.centre-y
+                .double-page-child.db-right.text-center.centre-y
                     .container
                         h1 Bespoke brand design
                         p From Olympic athletes to internationally accredited doctors to craft beer breweries.
                         p Tourmalet Media helps distinguished individuals and brands present themselves as such.
         //Showcase
-        .double-page-section#showcase
-            .double-page-parent
-                .double-page-child.db-left.centre-y
-                    .double-page-container#henri-preview.p-3
-                        h4.w-50.z-top Featured on the custom bike of Olympic Medalist, Henri Schoeman
-                        btn#btnViewProject.btn.btn-primary.z-top View Project
-                .double-page-child.db-right.centre-y
-                    .double-page-container#henri-details
-                        #demo.carousel.slide.h-100(data-ride='carousel')
+        section#showcase.centre-y
+            .container-standard
+                .cover.p-5
+                    btn.btn-expand#btnViewProject.btn.btn-primary.pull-right Recent projects
+                .carousel#carousel-showcase.slide.h-100(data-ride='carousel',data-interval="false")
                             // Indicators
                             ul.carousel-indicators
-                                li.active(data-target='#demo', data-slide-to='0')
-                                li(data-target='#demo', data-slide-to='1')
-                                li(data-target='#demo', data-slide-to='2')
+                                li.active(data-target='#carousel-showcase', data-slide-to='0')
+                                li(data-target='#carousel-showcase', data-slide-to='1')
+                                li(data-target='#carousel-showcase', data-slide-to='2')
+                                li(data-target='#carousel-showcase', data-slide-to='3')
+                                li(data-target='#carousel-showcase', data-slide-to='4')
+                                li(data-target='#carousel-showcase', data-slide-to='5')
                             // The slideshow
                             .carousel-inner.h-100
-                                #item1.carousel-item.h-100.active
-                                #item2.carousel-item.h-100
-                                #item3.carousel-item.h-100
+                                #item1.carousel-item.active
+                                    h4.w-50 Featured on the custom bike of Olympic Medalist, Henri Schoeman
+                                #item2.carousel-item
+                                #item3.carousel-item
+                                    h4.w-50 Brand identity and design for Red Bull ambassador, Richard Murray
+                                #item4.carousel-item
+                                    h4.w-50 
+                                #item5.carousel-item
+                                    h4.w-50.text-dark Brand identity and design for The Nunez Hurley Academy
+                                #item6.carousel-item
+                                    h4.w-50.text-dark Web and design projects for 7 x triathlon world champion, Conrad Stoltz
+                                #item7.carousel-item
                             // Left and right controls
-                            a.carousel-control-prev(href='#demo', data-slide='prev')
+                            a.carousel-control-prev(href='#carousel-showcase', data-slide='prev')
                                 span.carousel-control-prev-icon
-                            a.carousel-control-next(href='#demo', data-slide='next')
+                            a.carousel-control-next(href='#carousel-showcase', data-slide='next')
                                 span.carousel-control-next-icon
-                        //p.info-tag scroll to close
         //Web
-        section#web.bg-white.text-black.centre-y
+        //section#web.bg-white.text-black.centre-y
             .container
-                //.row
-                    .col-md-12
-                        span.pull-right.pb-5 
-                            h3.d-inline WEB | 
-                            a.d-inline(href="")
-                                h3.d-inline mobile first
                 .row
-                    .col-md-4.mb-5.mb-md-0
+                    .col-md-6.mb-5.mb-md-0
                         .flip-container
                             .flipper
                                 .front
+                                        img.web-icon(src="img/previews/imacback.png")
+                                .back.centre-x
                                     a(href="https://www.helderbergpainclinic.co.za", target="_blanc")
                                         img.web-icon(src="img/previews/painclinic.png")
-                                .back.centre-x
-                                    a(href="https://www.helderbergpainclinic.co.za", target="_blanc")
-                                        img.web-icon(src="img/previews/mpainclinic.png")
-                    .col-md-4.mb-5.mb-md-0
-                        .flip-container
+                    .col-md-6.mb-5.mb-md-0
+                        .flip-container.flip
                             .flipper
                                 .front
+                                    a(href="https://www.marizaancarstens.co.za", target="_blanc")
+                                        img.web-icon(src="img/previews/imacback.png")
+                                .back.centre-x
                                     a(href="https://www.marizaancarstens.co.za", target="_blanc")
                                         img.web-icon(src="img/previews/mca.png")
-                                .back.centre-x
-                                    a(href="https://www.marizaancarstens.co.za", target="_blanc")
-                                        img.web-icon(src="img/previews/mmca.png")
-                    .col-md-4.mb-5.mb-md-0
+                .row
+                    //.col-md-4.mb-5.mb-md-0
                         .flip-container
                             .flipper
                                 .front
-                                    a(href="htts://www.cavemancafe.com", target="_blanc")
-                                        img.web-icon(src="img/previews/cavemancafe.png")
+                                    a(href="htts://www.cavemancafe.co.za", target="_blanc")
+                                        img.web-icon(src="img/previews/imacback.png")
                                 .back.centre-x
-                                    a(href="http://www.cavemancafe.com", target="_blanc")
-                                        img.web-icon(src="img/previews/mcavemancafe.png")
+                                    a(href="http://www.cavemancafe.co.za", target="_blanc")
+                                        img.web-icon(src="img/previews/cavemancafe.png")
         //Contact
-        section#contact.text-center.pb-5
-            img.d-inline(src="img/logo.svg")
-            h1.d-inline.ml-5 |
-            a(href="mailto:dehanlouw@icloud.com")
-                h2.d-inline.ml-5 contact
+        section#contact.centre-y
+            .container.text-center
+                img.d-inline(src="img/logo.svg")
+                h1.d-inline.ml-2.ml-md-5 |
+                a(href="mailto:dehanlouw@icloud.com")
+                    h2.d-inline.ml-2.ml-md-5 contact
         // Footer
         footer.footer.text-center
             .container-full
@@ -161,6 +149,8 @@ html(lang="en")
         script(src="vendor/bootstrap/js/bootstrap.min.js")
         // Plugin JavaScript
         script(src="vendor/jquery-easing/jquery.easing.min.js")
+        script(src="vendor/gsap/TweenMax.min.js")
+        script(src="vendor/scrollmagic/ScrollMagic.min.js")
         // Custom scripts for this template
         script(src="js/mza.min.js")
 

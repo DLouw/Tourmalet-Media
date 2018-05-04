@@ -1,0 +1,45 @@
+#CI{
+    
+    color: $secondary;
+    height: 100%;
+    
+    //custom carousel settings
+
+    .carousel #item1{
+        background-image: url(../img/projects/nunezhurley.png);
+    }
+    
+    .carousel #item2{
+        background-image: url(../img/projects/cavemancafe.png);
+    }
+    
+    .carousel #item3{
+        background-image: url(../img/projects/wian.png);
+    }
+    
+    .carousel-item{
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+     
+    .cover{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: 1000;
+        background-image: url(../img/henri_grey.jpg);
+        background-position: center;
+        transition: all 0.5s ease-out;
+        filter: opacity(1);
+     }
+    
+    .hide{
+        filter: opacity(0);
+    }
+    
+
+    
+}

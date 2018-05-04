@@ -106,6 +106,12 @@ gulp.task('copy', function() {
   gulp.src(['node_modules/simple-line-icons/*/*'])
     .pipe(gulp.dest('dist/vendor/simple-line-icons'))
     
+    gulp.src(['node_modules/gsap/src/minified/TweenMax.min.js'])
+    .pipe(gulp.dest('dist/vendor/gsap'))
+    
+    gulp.src(['node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js'])
+    .pipe(gulp.dest('dist/vendor/scrollmagic'))
+    
   gulp.src(['serverside/*.php'])
     .pipe(gulp.dest('dist/serverside/'))
 });

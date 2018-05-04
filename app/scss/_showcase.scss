@@ -1,30 +1,111 @@
 #showcase{
     
     color: $secondary;
+    height: 100%;
     
     //custom carousel settings
-
+    
+    //mobile first carousel backgrounds
     .carousel #item1{
-        background-image: url(../img/henri.jpg);
+        background-image: url(../img//projects/hs_sm_1.png);
     }
     
     .carousel #item2{
-        background-image: url(../img/bike2.jpg);
+        background-image: url(../img/projects/hs_sm_2.png);
     }
     
     .carousel #item3{
-        background-image: url(../img/bike3.jpg);
+        background-image: url(../img/projects/rd_sm_1.png);
+    }
+    
+     .carousel #item4{
+        background-image: url(../img/projects/rd_sm_2.png);
+    }
+    
+    .carousel #item5{
+        background-image: url(../img/projects/nh_sm_1.png);
+    }
+    
+    .carousel #item6{
+        background-image: url(../img/projects/cz_sm_1.png);
+    }
+    
+    //Carousel items for large screens
+    .carousel #item7{
+        background-image: url(../img/projects/cz_sm_2.png);
+    }
+    
+    @media(min-width: 768px){
+        .carousel #item1{
+            background-image: url(../img/projects/hs_lg_1.png);
+        }
+
+        .carousel #item2{
+            background-image: url(../img/projects/hs_lg_2.png);
+        }
+
+        .carousel #item3{
+            background-image: url(../img/projects/rd_lg_1.png);
+        }
+
+         .carousel #item4{
+            background-image: url(../img/projects/rd_lg_2.png);
+        }
+
+        .carousel #item5{
+            background-image: url(../img/projects/nh_lg_1.png);
+        }
+
+        .carousel #item6{
+            background-image: url(../img/projects/cz_lg_1.png);
+        }
+
+        .carousel #item7{
+            background-image: url(../img/projects/cz_lg_2.png);
+        }
+        
+        .cover{
+            background-image: url(../img/projects/hs_cv_lg.png);
+        }
     }
     
     .carousel-item{
+        height: 100%;
+        padding: 20px;
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
     }
     
+    .carousel-item:after{
+        content: "";
+        background: url(../img/subtle-dots.png) repeat;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1; 
+    } 
+    
      
-    #henri-preview{
-        background-image: url(../img/henri_grey.jpg);
-        background-position: left;
+    .cover{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: 1000;
+        background-image: url(../img/projects/hs_cv_sm.png);
+        background-position: center;
+        transition: all 0.5s ease-out;
+        filter: opacity(1);
      }
     
- }
+    
+    .hide{
+        filter: opacity(0);
+    }
+    
+    
+}

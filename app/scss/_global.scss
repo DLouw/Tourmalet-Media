@@ -13,6 +13,7 @@ body {
   padding: 1.25rem 2.5rem;
 }
 
+
 // Content Section
 .content-section {
   padding-top: 7.5rem;
@@ -132,25 +133,22 @@ h6 {
 
 .double-page-section{
     position: relative;
-    height: 100%;
     width: 100%;
     overflow: hidden;
 }
 
 .double-page-parent{
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 200%;
     left: 0;
     //overflow: hidden;
     transition: all 0.4s ease-out;
 }
 
 .double-page-child{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
+    position: relative;
+    width: 50%;
+    top: 0px;
   }
 
 
@@ -159,9 +157,51 @@ h6 {
 }
 
 .db-left{
-    left: 0%;
+    float: left;
 }
 
 .db-right{
-    left: 100%;
+    margin-left: 50%;
+    height: 100vh;
+}
+
+@media(min-width:768px){
+    
+    .double-page-section{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .double-page-parent{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        //overflow: hidden;
+        transition: all 0.4s ease-out;
+    }
+
+    .double-page-child{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+      }
+
+
+    .show-right-half{
+        left: -100% !important;
+    }
+
+    .db-left{
+        left: 0%;
+    }
+
+    .db-right{
+        left: 100%;
+        margin-left: 0%;
+    }
+
 }

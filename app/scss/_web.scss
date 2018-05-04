@@ -8,6 +8,25 @@
 
     }
     
+//    .flip-container{
+//        .icon-12oclock{
+//            font-size: 30px;
+//            position: absolute;
+//            left: 100%;
+//            transform: translateX(50%);
+//            bottom: 110%;
+//            //transform: translateY(-50%);
+//        }
+//        
+//        .icon-3oclock{
+//            font-size: 30px;
+//            position: absolute;
+//            left: 100%;
+//            top: 50%;
+//            transform: translateY(50%);
+//        }
+//    }
+    
     /* entire container, keeps perspective */
     .flip-container {
         perspective: 1000px;
@@ -26,9 +45,8 @@
 
     /* flip speed goes here */
     .flipper {
-        transition: 0.6s;
+        transition: 0.3s ease-in;
         transform-style: preserve-3d;
-
         position: relative;
     }
 

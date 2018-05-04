@@ -9,7 +9,7 @@ html {
   height: 100%; }
 
 body {
-  font-family: 'Lato', sans-serif; }
+  font-family: Montserrat, sans-serif; }
 
 .btn-xl {
   padding: 1.25rem 2.5rem; }
@@ -95,31 +95,54 @@ h6 {
 
 .double-page-section {
   position: relative;
-  height: 100%;
   width: 100%;
   overflow: hidden; }
 
 .double-page-parent {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 200%;
   left: 0;
   transition: all 0.4s ease-out; }
 
 .double-page-child {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0; }
+  position: relative;
+  width: 50%;
+  top: 0px; }
 
 .show-right-half {
   left: -100% !important; }
 
 .db-left {
-  left: 0%; }
+  float: left; }
 
 .db-right {
-  left: 100%; }
+  margin-left: 50%;
+  height: 100vh; }
+
+@media (min-width: 768px) {
+  .double-page-section {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; }
+  .double-page-parent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    transition: all 0.4s ease-out; }
+  .double-page-child {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px; }
+  .show-right-half {
+    left: -100% !important; }
+  .db-left {
+    left: 0%; }
+  .db-right {
+    left: 100%;
+    margin-left: 0%; } }
 
 .masthead {
   min-height: 30rem;
@@ -244,7 +267,7 @@ h6 {
     width: 150px;
     height: 150px; }
   #web .flipper {
-    transition: 0.6s;
+    transition: 0.3s ease-in;
     transform-style: preserve-3d;
     position: relative; }
   #web .front, #web .back {
@@ -260,15 +283,16 @@ h6 {
     transform: rotateY(180deg); }
 
 #design {
-  position: relative;
-  min-height: 100%; }
+  position: relative; }
   #design .design-icon {
     height: 5rem;
     max-width: 10rem;
     font-size: 2.25rem;
     margin-left: auto;
     margin-right: auto;
-    cursor: pointer; }
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-top: 50px; }
 
 #landing {
   background-image: url("../img/loften.jpg");
@@ -276,29 +300,91 @@ h6 {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed; }
-  #landing img {
-    width: 150px; }
+  #landing .logo {
+    width: 250px; }
   @media (min-width: 768px) {
-    #landing img {
+    #landing .logo {
       width: 450px; } }
+  #landing #landing:after {
+    content: "";
+    background: url(../img/subtle-dots.png) repeat;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; }
 
 #showcase {
-  color: silver; }
+  color: silver;
+  height: 100%; }
   #showcase .carousel #item1 {
-    background-image: url(../img/henri.jpg); }
+    background-image: url(../img//projects/hs_sm_1.png); }
   #showcase .carousel #item2 {
-    background-image: url(../img/bike2.jpg); }
+    background-image: url(../img/projects/hs_sm_2.png); }
   #showcase .carousel #item3 {
-    background-image: url(../img/bike3.jpg); }
+    background-image: url(../img/projects/rd_sm_1.png); }
+  #showcase .carousel #item4 {
+    background-image: url(../img/projects/rd_sm_2.png); }
+  #showcase .carousel #item5 {
+    background-image: url(../img/projects/nh_sm_1.png); }
+  #showcase .carousel #item6 {
+    background-image: url(../img/projects/cz_sm_1.png); }
+  #showcase .carousel #item7 {
+    background-image: url(../img/projects/cz_sm_2.png); }
+  @media (min-width: 768px) {
+    #showcase .carousel #item1 {
+      background-image: url(../img/projects/hs_lg_1.png); }
+    #showcase .carousel #item2 {
+      background-image: url(../img/projects/hs_lg_2.png); }
+    #showcase .carousel #item3 {
+      background-image: url(../img/projects/rd_lg_1.png); }
+    #showcase .carousel #item4 {
+      background-image: url(../img/projects/rd_lg_2.png); }
+    #showcase .carousel #item5 {
+      background-image: url(../img/projects/nh_lg_1.png); }
+    #showcase .carousel #item6 {
+      background-image: url(../img/projects/cz_lg_1.png); }
+    #showcase .carousel #item7 {
+      background-image: url(../img/projects/cz_lg_2.png); }
+    #showcase .cover {
+      background-image: url(../img/projects/hs_cv_lg.png); } }
   #showcase .carousel-item {
+    height: 100%;
+    padding: 20px;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat; }
-  #showcase #henri-preview {
-    background-image: url(../img/henri_grey.jpg);
-    background-position: left; }
+  #showcase .carousel-item:after {
+    content: "";
+    background: url(../img/subtle-dots.png) repeat;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; }
+  #showcase .cover {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background-image: url(../img/projects/hs_cv_sm.png);
+    background-position: center;
+    transition: all 0.5s ease-out;
+    filter: opacity(1); }
+  #showcase .hide {
+    filter: opacity(0); }
 
-#contact img {
-  width: 180px; }
+#contact {
+  height: 50%; }
+  #contact img {
+    width: 120px; }
+  @media (min-width: 768px) {
+    #contact img {
+      width: 180px; } }
 
 .portfolio-item {
   display: block;
@@ -349,9 +435,34 @@ h6 {
         -webkit-clip-path: inset(2rem);
         clip-path: inset(2rem); } }
 
+#CI {
+  color: silver;
+  height: 100%; }
+  #CI .carousel #item1 {
+    background-image: url(../img/projects/nunezhurley.png); }
+  #CI .carousel #item2 {
+    background-image: url(../img/projects/cavemancafe.png); }
+  #CI .carousel #item3 {
+    background-image: url(../img/projects/wian.png); }
+  #CI .carousel-item {
+    background-position: center;
+    background-repeat: no-repeat; }
+  #CI .cover {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background-image: url(../img/henri_grey.jpg);
+    background-position: center;
+    transition: all 0.5s ease-out;
+    filter: opacity(1); }
+  #CI .hide {
+    filter: opacity(0); }
+
 footer.footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem; }
+  padding-bottom: 2rem; }
   footer.footer .brandlogo {
     display: block;
     width: 60px;
@@ -400,7 +511,7 @@ a {
   color: silver !important; }
 
 body {
-  font-family: 'Lato', sans-serif; }
+  font-family: Montserrat, sans-serif; }
 
 h1 {
   margin-bottom: 40px; }
@@ -434,25 +545,21 @@ h4 {
 a {
   transition: all 1s ease-out; }
 
-.double-page-container {
+.container-standard {
   margin-left: auto;
   margin-right: auto;
   position: relative;
   width: 100%;
   height: 100%; }
-  @media (min-width: 768px) {
-    .double-page-container {
+  @media (min-width: 768px) and (min-height: 450px) {
+    .container-standard {
       width: 750px;
       height: 400px; } }
-  @media (min-width: 992px) {
-    .double-page-container {
+  @media (min-width: 992px) and (min-height: 550px) {
+    .container-standard {
       width: 970px;
       height: 500px; } }
-  @media (min-width: 1200px) {
-    .double-page-container {
+  @media (min-width: 1200px) and (min-height: 650px) {
+    .container-standard {
       width: 1170px;
       height: 600px; } }
-  .double-page-container .info-tag {
-    position: absolute;
-    bottom: 2%;
-    right: 2%; }

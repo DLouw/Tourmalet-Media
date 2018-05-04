@@ -43,25 +43,53 @@
 //})(jQuery); // End of use strict
 
 $(document).ready(function() {
+    
+    var expandActive = false;
+    $(".carousel").carousel('pause');
 
     
-    
-    $("#btnViewProject").click(function(){ 
-       $("#showcase").goTo(function(){
-           $("#showcase .double-page-parent").addClass("show-right-half");                
+    //Click to open a preview
+    $(".btn-expand").click(function(){ 
+        
+        var button = $(this);
+        var cover = button.closest(".cover");
+        var section = button.closest("section");
+        
+        // init scrollmagic controller
+        var controller = new ScrollMagic.Controller();
+        
+        section.goTo(function(){
+                TweenMax.to(cover, 0.4, {opacity: 0, onComplete:function(){
+                cover.hide();
+                section.addClass("expanded");
+                expandActive = true;
+            }});
         });
        
     });
     
+    
+    //Window scroll functions
     $(window).scroll(function(){
-        $("#showcase .double-page-parent").removeClass("show-right-half");
-        $("#design .double-page-parent").removeClass("show-right-half");
+        
+        //Close an open preview
+        if (expandActive){
+                var that = $("section.expanded");
+                that.find(".cover").show();
+                that.removeClass("expanded");
+                that.find(".carousel").carousel(0);
+                that.find(".carousel").one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+                    TweenMax.to(that.find(".cover"), 0.2, {opacity: 1, onComplete:function(){
+                        expandActive = false;
+                    }});
+                });
+        };
+        
     });
     
-    //Flip containers
-    var intervalID = setInterval(flip, 7000);
 
-    //Design Icons
+
+    //Design icons click
     $(".design-icon").click(function(){ 
        $("#design").goTo(function(){
            $("#design .double-page-parent").addClass("show-right-half");                
@@ -69,10 +97,21 @@ $(document).ready(function() {
        
     });
     
+    // Scrollmagic scenes
+//    var webtween = TweenMax.staggerTo(".flip-container .flipper", 2, {rotationY:"180_cw", delay:0.5, ease:Elastic.easeOut, force3D:true}, 0.15);
+//    
+//    var webscene = new ScrollMagic.Scene({triggerElement: "#web"})
+//                    .setTween(webtween) // trigger a TweenMax.to tween
+//                    .addTo(controller);
+    
 });
 
 
-/////Scrollto
+
+
+//Additional functions
+
+//Scroll to a certain element
 $.fn.goTo = function (animCB) {
     return this.each(function () {
         $('html, body').animate({
@@ -81,6 +120,8 @@ $.fn.goTo = function (animCB) {
     });
 }    
 
+
+//flip a flip container
 function flip(){
     $(".flip-container").toggleClass("flip");
 }

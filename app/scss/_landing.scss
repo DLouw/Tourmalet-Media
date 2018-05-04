@@ -7,14 +7,26 @@
     background-size: cover;
     background-attachment: fixed;
     
-    img{
-        width: 150px;
+    .logo{
+        width: 250px;
     }
     
     @media(min-width:768px){
         
-        img{
+        .logo{
             width: 450px;
         }
     }
+    
+     #landing:after{
+        content: "";
+        background: url(../img/subtle-dots.png) repeat;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1; 
+    }
 }
+
