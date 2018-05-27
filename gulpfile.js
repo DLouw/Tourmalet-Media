@@ -8,6 +8,7 @@ var beautify = require('gulp-html-beautify');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
+var imagemin = require('gulp-imagemin');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -78,6 +79,12 @@ gulp.task('copy', function() {
 
   gulp.src(['app/img/**/*'])
     .pipe(gulp.dest('dist/img'))
+    
+
+    gulp.src('app/img/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img'))
+ 
 
   gulp.src([
       'node_modules/bootstrap/dist/**/*',
@@ -109,7 +116,9 @@ gulp.task('copy', function() {
     gulp.src(['node_modules/gsap/src/minified/TweenMax.min.js'])
     .pipe(gulp.dest('dist/vendor/gsap'))
     
-    gulp.src(['node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js'])
+    gulp.src(['node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
+             'node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
+             'node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js'])
     .pipe(gulp.dest('dist/vendor/scrollmagic'))
     
   gulp.src(['serverside/*.php'])

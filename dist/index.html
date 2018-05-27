@@ -27,36 +27,44 @@
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand"><a class="js-scroll-trigger" href="#page-top">Tourmalet</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#page-top">Home</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#about">About</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#services">Services</a></li>
+            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#landing">Home</a></li>
+            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#Design">Design</a></li>
+            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#showcase">Projects</a></li>
             <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#contact">Contact</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#Map">Map</a></li>
         </ul>
     </nav>
     <!-- Header-->
     <div class="full-section centre-y" id="landing">
-        <div class="container text-center"><img class="logo" src="img/logo.svg"></div>
+        <div class="container text-center"><img class="logo mb-5" src="img/logo.svg">
+            <div class="btn-group d-block"><a class="btn btn-secondary js-scroll-trigger" href="#intro" onclick="translatePage('en')">English</a><a class="btn btn-secondary js-scroll-trigger" href="#intro" onclick="translatePage('fr')">Française</a></div>
+        </div>
+    </div>
+    <div class="full-section content-section text-center centre-y" id="intro">
+        <div class="container">
+            <h1 data-lang="title">Bespoke brand identity and web development</h1>
+            <p data-lang="p1">From Olympic athletes to internationally accredited doctors to niche beer breweries.</p>
+            <p data-lang="p2">Tourmalet Media helps distinguished individuals and brands present themselves as such.</p>
+        </div>
     </div>
     <!-- Design-->
     <div class="double-page-section" id="design">
         <div class="double-page-parent">
-            <div class="double-page-child db-left centre-y">
+            <div class="double-page-child db-left">
                 <div class="container text-center">
                     <div class="row">
-                        <div class="col-md-4"><img class="mb-5 design-icon" src="img/icons/mep.svg"></div>
-                        <div class="col-md-4"><img class="mb-5 design-icon" src="img/icons/hs.svg"></div>
-                        <div class="col-md-4"><img class="mb-5 design-icon" src="img/icons/im.svg"></div>
-                        <div class="col-md-4"><img class="design-icon" src="img/icons/bw.svg"></div>
-                        <div class="col-md-4"><img class="design-icon" src="img/icons/vl.svg"></div>
-                        <div class="col-md-4"><img class="design-icon" src="img/icons/dogma.svg"></div>
+                        <div class="col-md-4"><img class="mb-5 design-icon row1" src="img/icons/mep.svg"></div>
+                        <div class="col-md-4"><img class="mb-5 design-icon row1" src="img/icons/hs.svg"></div>
+                        <div class="col-md-4"><img class="mb-5 design-icon row1" src="img/icons/im.svg"></div>
+                        <div class="col-md-4"><img class="design-icon row2" src="img/icons/bw.svg"></div>
+                        <div class="col-md-4"><img class="design-icon row2" src="img/icons/vl.svg"></div>
+                        <div class="col-md-4"><img class="design-icon row2" src="img/icons/dogma.svg"></div>
                     </div>
                 </div>
             </div>
             <div class="double-page-child db-right text-center centre-y">
                 <div class="container">
-                    <h1>Bespoke brand design</h1>
-                    <p>From Olympic athletes to internationally accredited doctors to craft beer breweries.</p>
+                    <h1>Bespoke brand identity and web development</h1>
+                    <p>From Olympic athletes to internationally accredited doctors to niche beer breweries.</p>
                     <p>Tourmalet Media helps distinguished individuals and brands present themselves as such.</p>
                 </div>
             </div>
@@ -91,51 +99,31 @@
                         <h4 class="w-50"> </h4>
                     </div>
                     <div class="carousel-item" id="item5">
-                        <h4 class="w-50 text-dark">Brand identity and design for The Nunez Hurley Academy</h4>
+                        <h4 class="w-50">Brand identity and design for The Nunez Hurley Academy</h4>
                     </div>
                     <div class="carousel-item" id="item6">
-                        <h4 class="w-50 text-dark">Web and design projects for 7 x triathlon world champion, Conrad Stoltz</h4>
+                        <h4 class="w-50"></h4>
                     </div>
-                    <div class="carousel-item" id="item7"></div>
+                    <div class="carousel-item" id="item7">
+                        <h4 class="w-50">Web and design projects for 7 x triathlon world champion, Conrad Stoltz</h4>
+                    </div>
+                    <div class="carousel-item" id="item8"></div>
+                    <div class="carousel-item centre-y" id="item9">
+                        <div class="row">
+                            <div class="col-md-4 text-center"><a><img class="web-icon" src="img/previews/mca.png"></a></div>
+                            <div class="col-md-4 text-center"><a><img class="web-icon" src="img/previews/mca.png"></a></div>
+                            <div class="col-md-4 text-center"><a><img class="web-icon" src="img/previews/mca.png"></a></div>
+                        </div>
+                    </div>
                 </div>
                 <!-- Left and right controls--><a class="carousel-control-prev" href="#carousel-showcase" data-slide="prev"><span class="carousel-control-prev-icon"></span></a><a class="carousel-control-next" href="#carousel-showcase" data-slide="next"><span class="carousel-control-next-icon"></span></a></div>
         </div>
     </section>
-    <!--Web-->
-    <!--section#web.bg-white.text-black.centre-y.container
-    .row
-        .col-md-6.mb-5.mb-md-0
-            .flip-container
-                .flipper
-                    .front
-                            img.web-icon(src="img/previews/imacback.png")
-                    .back.centre-x
-                        a(href="https://www.helderbergpainclinic.co.za", target="_blanc")
-                            img.web-icon(src="img/previews/painclinic.png")
-        .col-md-6.mb-5.mb-md-0
-            .flip-container.flip
-                .flipper
-                    .front
-                        a(href="https://www.marizaancarstens.co.za", target="_blanc")
-                            img.web-icon(src="img/previews/imacback.png")
-                    .back.centre-x
-                        a(href="https://www.marizaancarstens.co.za", target="_blanc")
-                            img.web-icon(src="img/previews/mca.png")
-    .row
-        //.col-md-4.mb-5.mb-md-0
-            .flip-container
-                .flipper
-                    .front
-                        a(href="htts://www.cavemancafe.co.za", target="_blanc")
-                            img.web-icon(src="img/previews/imacback.png")
-                    .back.centre-x
-                        a(href="http://www.cavemancafe.co.za", target="_blanc")
-                            img.web-icon(src="img/previews/cavemancafe.png")-->
     <!--Contact-->
     <section class="centre-y" id="contact">
-        <div class="container text-center"><img class="d-inline" src="img/logo.svg">
+        <div class="container text-center"><img class="d-inline" id="contact-icon" src="img/logo.svg">
             <h1 class="d-inline ml-2 ml-md-5">|</h1>
-            <a href="mailto:dehanlouw@icloud.com">
+            <a id="contact-link" href="mailto:dehanlouw@icloud.com">
                 <h2 class="d-inline ml-2 ml-md-5">contact</h2>
             </a>
         </div>
@@ -152,6 +140,8 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="vendor/gsap/TweenMax.min.js"></script>
     <script src="vendor/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="vendor/scrollmagic/animation.gsap.min.js"></script>
+    <script src="vendor/scrollmagic/debug.addIndicators.min.js"></script>
     <!-- Custom scripts for this template-->
     <script src="js/mza.min.js"></script>
 </body>

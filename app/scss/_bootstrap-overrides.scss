@@ -32,6 +32,11 @@ a {
   }
 }
 
+.btn-primary.focus, .btn-primary:focus {
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
 .btn-dark {
   color: $white !important;
 }

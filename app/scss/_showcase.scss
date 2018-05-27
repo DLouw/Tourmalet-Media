@@ -7,7 +7,7 @@
     
     //mobile first carousel backgrounds
     .carousel #item1{
-        background-image: url(../img//projects/hs_sm_1.png);
+        background-image: url(../img/projects/hs_sm_1.png);
     }
     
     .carousel #item2{
@@ -27,13 +27,31 @@
     }
     
     .carousel #item6{
+        background-image: url(../img/projects/nh_sm_2.png);
+    }
+    
+    .carousel #item7{
         background-image: url(../img/projects/cz_sm_1.png);
     }
     
     //Carousel items for large screens
-    .carousel #item7{
+    .carousel #item8{
         background-image: url(../img/projects/cz_sm_2.png);
     }
+    
+    .cover{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: 1000;
+        background-image: url(../img/projects/hs_cv_sm.png);
+        background-position: center;
+        background-size: contain;
+        transition: all 0.5s ease-out;
+        filter: opacity(1);
+     }
     
     @media(min-width: 768px){
         .carousel #item1{
@@ -55,12 +73,16 @@
         .carousel #item5{
             background-image: url(../img/projects/nh_lg_1.png);
         }
-
+        
         .carousel #item6{
-            background-image: url(../img/projects/cz_lg_1.png);
+            background-image: url(../img/projects/nh_lg_2.png);
         }
 
         .carousel #item7{
+            background-image: url(../img/projects/cz_lg_1.png);
+        }
+
+        .carousel #item8{
             background-image: url(../img/projects/cz_lg_2.png);
         }
         
@@ -88,23 +110,14 @@
         z-index: -1; 
     } 
     
-     
-    .cover{
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        height: 100%;
-        width: 100%;
-        z-index: 1000;
-        background-image: url(../img/projects/hs_cv_sm.png);
-        background-position: center;
-        transition: all 0.5s ease-out;
-        filter: opacity(1);
-     }
-    
     
     .hide{
         filter: opacity(0);
+    }
+    
+    //Icons for web previews
+    .web-icon{
+        height: 100px;
     }
     
     

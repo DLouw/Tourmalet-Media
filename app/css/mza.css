@@ -319,7 +319,7 @@ h6 {
   color: silver;
   height: 100%; }
   #showcase .carousel #item1 {
-    background-image: url(../img//projects/hs_sm_1.png); }
+    background-image: url(../img/projects/hs_sm_1.png); }
   #showcase .carousel #item2 {
     background-image: url(../img/projects/hs_sm_2.png); }
   #showcase .carousel #item3 {
@@ -329,9 +329,23 @@ h6 {
   #showcase .carousel #item5 {
     background-image: url(../img/projects/nh_sm_1.png); }
   #showcase .carousel #item6 {
-    background-image: url(../img/projects/cz_sm_1.png); }
+    background-image: url(../img/projects/nh_sm_2.png); }
   #showcase .carousel #item7 {
+    background-image: url(../img/projects/cz_sm_1.png); }
+  #showcase .carousel #item8 {
     background-image: url(../img/projects/cz_sm_2.png); }
+  #showcase .cover {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background-image: url(../img/projects/hs_cv_sm.png);
+    background-position: center;
+    background-size: contain;
+    transition: all 0.5s ease-out;
+    filter: opacity(1); }
   @media (min-width: 768px) {
     #showcase .carousel #item1 {
       background-image: url(../img/projects/hs_lg_1.png); }
@@ -344,8 +358,10 @@ h6 {
     #showcase .carousel #item5 {
       background-image: url(../img/projects/nh_lg_1.png); }
     #showcase .carousel #item6 {
-      background-image: url(../img/projects/cz_lg_1.png); }
+      background-image: url(../img/projects/nh_lg_2.png); }
     #showcase .carousel #item7 {
+      background-image: url(../img/projects/cz_lg_1.png); }
+    #showcase .carousel #item8 {
       background-image: url(../img/projects/cz_lg_2.png); }
     #showcase .cover {
       background-image: url(../img/projects/hs_cv_lg.png); } }
@@ -364,19 +380,10 @@ h6 {
     right: 0;
     position: absolute;
     z-index: -1; }
-  #showcase .cover {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: 1000;
-    background-image: url(../img/projects/hs_cv_sm.png);
-    background-position: center;
-    transition: all 0.5s ease-out;
-    filter: opacity(1); }
   #showcase .hide {
     filter: opacity(0); }
+  #showcase .web-icon {
+    height: 100px; }
 
 #contact {
   height: 50%; }
@@ -493,6 +500,10 @@ a {
   .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
     background-color: #a7a7a7 !important;
     border-color: #a7a7a7 !important; }
+
+.btn-primary.focus, .btn-primary:focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important; }
 
 .btn-dark {
   color: #fff !important; }

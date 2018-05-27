@@ -28,41 +28,47 @@ html(lang="en")
                 li.sidebar-brand
                     a.js-scroll-trigger(href="#page-top") Tourmalet
                 li.sidebar-nav-item
-                    a.js-scroll-trigger(href="#page-top") Home
+                    a.js-scroll-trigger(href="#landing") Home
                 li.sidebar-nav-item
-                    a.js-scroll-trigger(href="#about") About
+                    a.js-scroll-trigger(href="#Design") Design
                 li.sidebar-nav-item
-                    a.js-scroll-trigger(href="#services") Services
+                    a.js-scroll-trigger(href="#showcase") Projects
                 li.sidebar-nav-item
                     a.js-scroll-trigger(href="#contact") Contact
-                li.sidebar-nav-item
-                    a.js-scroll-trigger(href="#Map") Map
         // Header
         #landing.full-section.centre-y
             div.container.text-center
-                img.logo(src="img/logo.svg")
+                img.logo.mb-5(src="img/logo.svg")
+                .btn-group.d-block
+                    a.btn.btn-secondary.js-scroll-trigger(href="#intro" onclick="translatePage('en')") English
+                    a.btn.btn-secondary.js-scroll-trigger(href="#intro" onclick="translatePage('fr')") Française
+        #intro.full-section.content-section.text-center.centre-y
+            .container
+                h1(data-lang="title") Bespoke brand identity and web development
+                p(data-lang="p1") From Olympic athletes to internationally accredited doctors to niche beer breweries.
+                p(data-lang="p2") Tourmalet Media helps distinguished individuals and brands present themselves as such.
         // Design
-        .double-page-section#design
+        #design.double-page-section
             .double-page-parent
-                .double-page-child.db-left.centre-y
+                .double-page-child.db-left
                     .container.text-center
                         .row
                             .col-md-4
-                                img.mb-5.design-icon(src="img/icons/mep.svg")
+                                img.mb-5.design-icon.row1(src="img/icons/mep.svg")
                             .col-md-4
-                                img.mb-5.design-icon(src="img/icons/hs.svg")
+                                img.mb-5.design-icon.row1(src="img/icons/hs.svg")
                             .col-md-4
-                                img.mb-5.design-icon(src="img/icons/im.svg")
+                                img.mb-5.design-icon.row1(src="img/icons/im.svg")
                             .col-md-4
-                                img.design-icon(src="img/icons/bw.svg")
+                                img.design-icon.row2(src="img/icons/bw.svg")
                             .col-md-4
-                                img.design-icon(src="img/icons/vl.svg")
+                                img.design-icon.row2(src="img/icons/vl.svg")
                             .col-md-4
-                                img.design-icon(src="img/icons/dogma.svg")
+                                img.design-icon.row2(src="img/icons/dogma.svg")
                 .double-page-child.db-right.text-center.centre-y
                     .container
-                        h1 Bespoke brand design
-                        p From Olympic athletes to internationally accredited doctors to craft beer breweries.
+                        h1 Bespoke brand identity and web development
+                        p From Olympic athletes to internationally accredited doctors to niche beer breweries.
                         p Tourmalet Media helps distinguished individuals and brands present themselves as such.
         //Showcase
         section#showcase.centre-y
@@ -88,52 +94,34 @@ html(lang="en")
                                 #item4.carousel-item
                                     h4.w-50 
                                 #item5.carousel-item
-                                    h4.w-50.text-dark Brand identity and design for The Nunez Hurley Academy
+                                    h4.w-50 Brand identity and design for The Nunez Hurley Academy
                                 #item6.carousel-item
-                                    h4.w-50.text-dark Web and design projects for 7 x triathlon world champion, Conrad Stoltz
+                                    h4.w-50
                                 #item7.carousel-item
+                                    h4.w-50 Web and design projects for 7 x triathlon world champion, Conrad Stoltz
+                                #item8.carousel-item
+                                #item9.carousel-item.centre-y
+                                    .row
+                                        .col-md-4.text-center
+                                            a
+                                                img.web-icon(src="img/previews/mca.png")
+                                        .col-md-4.text-center
+                                            a
+                                                img.web-icon(src="img/previews/mca.png")
+                                        .col-md-4.text-center
+                                            a
+                                                img.web-icon(src="img/previews/mca.png")
                             // Left and right controls
                             a.carousel-control-prev(href='#carousel-showcase', data-slide='prev')
                                 span.carousel-control-prev-icon
                             a.carousel-control-next(href='#carousel-showcase', data-slide='next')
                                 span.carousel-control-next-icon
-        //Web
-        //section#web.bg-white.text-black.centre-y
-            .container
-                .row
-                    .col-md-6.mb-5.mb-md-0
-                        .flip-container
-                            .flipper
-                                .front
-                                        img.web-icon(src="img/previews/imacback.png")
-                                .back.centre-x
-                                    a(href="https://www.helderbergpainclinic.co.za", target="_blanc")
-                                        img.web-icon(src="img/previews/painclinic.png")
-                    .col-md-6.mb-5.mb-md-0
-                        .flip-container.flip
-                            .flipper
-                                .front
-                                    a(href="https://www.marizaancarstens.co.za", target="_blanc")
-                                        img.web-icon(src="img/previews/imacback.png")
-                                .back.centre-x
-                                    a(href="https://www.marizaancarstens.co.za", target="_blanc")
-                                        img.web-icon(src="img/previews/mca.png")
-                .row
-                    //.col-md-4.mb-5.mb-md-0
-                        .flip-container
-                            .flipper
-                                .front
-                                    a(href="htts://www.cavemancafe.co.za", target="_blanc")
-                                        img.web-icon(src="img/previews/imacback.png")
-                                .back.centre-x
-                                    a(href="http://www.cavemancafe.co.za", target="_blanc")
-                                        img.web-icon(src="img/previews/cavemancafe.png")
         //Contact
         section#contact.centre-y
             .container.text-center
-                img.d-inline(src="img/logo.svg")
+                img#contact-icon.d-inline(src="img/logo.svg")
                 h1.d-inline.ml-2.ml-md-5 |
-                a(href="mailto:dehanlouw@icloud.com")
+                a#contact-link(href="mailto:dehanlouw@icloud.com")
                     h2.d-inline.ml-2.ml-md-5 contact
         // Footer
         footer.footer.text-center
@@ -151,6 +139,8 @@ html(lang="en")
         script(src="vendor/jquery-easing/jquery.easing.min.js")
         script(src="vendor/gsap/TweenMax.min.js")
         script(src="vendor/scrollmagic/ScrollMagic.min.js")
+        script(src="vendor/scrollmagic/animation.gsap.min.js")
+        script(src="vendor/scrollmagic/debug.addIndicators.min.js")
         // Custom scripts for this template
         script(src="js/mza.min.js")
 
