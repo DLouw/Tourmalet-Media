@@ -116,35 +116,30 @@ $(document).ready(function() {
     
     var designscene1 = new ScrollMagic.Scene({triggerElement: "#design"})
                     .setTween(designtween1) // trigger a TweenMax.to tween
-                    .addIndicators()
                     .addTo(controller);
     
     var designtween2 = TweenMax.from(".row2", 1, {y:100, opacity: 0, ease:Power2.easeOut});
     
     var designscene2 = new ScrollMagic.Scene({triggerElement: "#design", offset: 100})
                     .setTween(designtween2) // trigger a TweenMax.to tween
-                    .addIndicators()
                     .addTo(controller);
     
     var showcasetween = TweenMax.from("#btnViewProject", 1, {opacity: 0, ease:Power2.easeOut});
     
     var showcasescene = new ScrollMagic.Scene({triggerElement: "#showcase", offset: 300})
                     .setTween(showcasetween) // trigger a TweenMax.to tween
-                    .addIndicators()
                     .addTo(controller);
     
     var contacttween = TweenMax.from("#contact-link", 1, {opacity: 0, ease:Power2.easeOut});
     
     var contactscene = new ScrollMagic.Scene({triggerElement: "#contact"})
                     .setTween(contacttween) // trigger a TweenMax.to tween
-                    .addIndicators()
                     .addTo(controller)
     
     var showcase2tween = TweenMax.from("#showcase", 2, {opacity: 0.5, ease:Power2.easeOut});
     
     var showcase2scene = new ScrollMagic.Scene({triggerElement: "#showcase", offset: 100})
                     .setTween(showcase2tween) // trigger a TweenMax.to tween
-                    .addIndicators()
                     .addTo(controller)
     
 });

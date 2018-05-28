@@ -74,17 +74,18 @@ gulp.task('pug', function buildHTML() {
     }))
 });
 
+//gulp.task('optimizeimages', function imageopt(){
+//    return gulp.src('app/img/**/*')
+//        .pipe(imagemin())
+//        .pipe(gulp.dest('dist/img'))
+//});
+
 // Copy vendor files from /node_modules into /vendor
 gulp.task('copy', function() {
 
-  gulp.src(['app/img/**/*'])
-    .pipe(gulp.dest('dist/img'))
-    
-
-    gulp.src('app/img/**/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('dist/img'))
- 
+//  gulp.src(['app/img/**/*'])
+//    .pipe(gulp.dest('dist/img'))
+     
 
   gulp.src([
       'node_modules/bootstrap/dist/**/*',
