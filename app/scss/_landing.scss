@@ -6,9 +6,18 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    opacity: 0;
     
     .logo{
         width: 250px;
+        //Will later be set to 1 in js
+        //opacity: 0.3;
+    }
+    
+    #path{
+        transition: all 1s ease-in;
+        stroke-dasharray: 350;
+        stroke-dashoffset: 350;
     }
     
     @media(min-width:768px){

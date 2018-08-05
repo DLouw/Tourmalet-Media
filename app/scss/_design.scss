@@ -17,4 +17,32 @@
       //transition: all 0.5s ease-out;
       //transform: scale(1.1);
     }
+    
+    #container2{
+            flex-direction: column;
+            display: none;
+        
+        @media(min-width: 768px){
+            flex-direction: row;   
+        }
+    }
+    
+    #imgWrapper{
+        position: relative;
+    }
+    
+    #btnCloseDesign{
+        position: absolute;
+        left: 50px;
+        top: 50px;
+    }
+    
+    #brand-image{
+        height: 10rem;
+        max-width: 20rem;
+    }
+    
+    #brand-paragraph{
+        max-width: 30rem;
+    }
 }

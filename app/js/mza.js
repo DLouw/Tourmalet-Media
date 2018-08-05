@@ -42,16 +42,37 @@
 
 })(jQuery); // End of use strict
 
+
+
 var controller = new ScrollMagic.Controller();
+
+var introOpen = false;
+var expandActive = false;
+var designOpen = false;
 
 $(document).ready(function() {
     
-    var expandActive = false;
+    console.log("document ready");
+    //Images loaded plugin
+    $('#landing').imagesLoaded( { background: true }, function() {
+        console.log("done loading");
+        //$("#loading").addClass("hide");
+        TweenMax.to("#landing", 2, {opacity: 1, ease:Power2.easeOut});
+        //When done loading, wait for the loading bar to finish animation
+//        $("#loading").on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', 
+//                   function() {
+//            console.log("transition ended punk");
+//            $("#loading").hide();
+//            TweenMax.to("#logo", 0.5, {opacity:1, ease:Power2.easeIn});
+//        });
+
+    });
+    
     $(".carousel").carousel('pause');
 
     
     //Click to open a preview
-    $(".btn-expand").click(function(){ 
+    $("#btn-expand").click(function(){ 
         
         var button = $(this);
         var cover = button.closest(".cover");
@@ -69,35 +90,60 @@ $(document).ready(function() {
         });
        
     });
+    //$("#div2").hide();
     
+//    $("#btn-design").click(function(){
+//        TweenMax.staggerTo(".intro-1", 0.4, {opacity: 0, x:100, onComplete:function(){
+//                $("#div1").hide();    
+//                //$("#div2").show();
+//                TweenMax.to("#div2", 0.5, {display:"block", autoAlpha: 1}, 1);
+//            }
+//        }, 0.05);
+//    });
     
-    //Window scroll functions
-    $(window).scroll(function(){
-        
-        //Close an open preview
-        if (expandActive){
-                var that = $("section.expanded");
-                that.find(".cover").show();
-                that.removeClass("expanded");
-                that.find(".carousel").carousel(0);
-                that.find(".carousel").one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-                    TweenMax.to(that.find(".cover"), 0.2, {opacity: 1, onComplete:function(){
-                        expandActive = false;
-                    }});
-                });
-        };
+
+    
+    tl1 = new TimelineMax({paused:true});
+    
+    tl1.staggerTo(".intro-1", 0.4, {opacity: 0, x:100}, 0.05)
+            .to("#div1", 0, { display:"none"})
+            .to("#div2", 0, {display:"block"}, "+=0.2")
+            .staggerFrom(".intro-2", 0.4, {opacity: 0, y:10}, 0.1)
+            .from(".intro-3", 0.6, {opacity:0.3, onComplete: function(){
+                                             introOpen = true;   
+                                             console.log("introOpen TRUE");
+                                            }});
+    
+      $("#btn-intro").click(function(){
+            
+    tl1.play();
         
     });
     
-
-
+    
+    tl2 = new TimelineMax();
+    
+    tl2.to("#design #container1", 0.5, {scaleX:2, scaleY:2, opacity: 0, display: "none", ease:Power2.easeOut}, 0.05)
+              .to("#container2", 0.1, {display:"flex"})
+              //.from("#container2", 0.5, {scaleX:2, scaleY:2, opacity: 0, ease:Power2.easeOut, onComplete: function(){
+                .staggerFrom("#container2 .elems", 0.4, {x:"100px", opacity: 0, ease:Power2.easeOut, onComplete: function(){
+                  designOpen = true;
+              }}, 0.1);
+    
+ 
     //Design icons click
-//    $(".design-icon").click(function(){ 
-//       $("#design").goTo(function(){
-//           $("#design .double-page-parent").addClass("show-right-half");                
-//        });
-//       
-//    });
+    $(".design-icon").click(function(){ 
+        
+            var desc = $(this).data("desc");
+            var src = $(this).attr("src");
+        
+            $("#brand-image").attr("src", src);
+            $("#brand-paragraph").text(desc);
+       
+            tl2.play();
+        
+    });
+    
     
     // Scrollmagic scenes
 //    var webtween = TweenMax.staggerTo(".flip-container .flipper", 2, {rotationY:"180_cw", delay:0.5, ease:Elastic.easeOut, force3D:true}, 0.15);
@@ -106,25 +152,31 @@ $(document).ready(function() {
 //                    .setTween(webtween) // trigger a TweenMax.to tween
 //                    .addTo(controller);
     
-    var landtween = TweenMax.to("#landing .logo", 1, {y:"-100%", ease:Power1.easeIn});
+    var landtween = TweenMax.to("#landing .logo", 1, {y:"-200%", ease:Power1.easeIn});
     
     var landscene = new ScrollMagic.Scene({triggerElement: "#landing", triggerHook: "onLeave", duration:"10%"})
                     .setTween(landtween) // trigger a TweenMax.to tween
                     .addTo(controller);
     
-    var designtween1 = TweenMax.from(".row1", 1, {y:100, opacity: 0, ease:Power2.easeOut});
+//    var introtween1 = TweenMax.staggerFrom(".intro-1", 1, {opacity: 0, y: 200, ease:Power2.easeOut}, 0.1);
+//    
+//    var introscene1 = new ScrollMagic.Scene({triggerElement: "#intro-title", triggerHook: "onEnter", offset: 100})
+//                    .setTween(introtween1) // trigger a TweenMax.to tween
+//                    .addTo(controller);
+    
+    var designtween1 = TweenMax.staggerFrom(".row1", 1, {y:100, opacity: 0, ease:Power2.easeOut}, 0.1);
     
     var designscene1 = new ScrollMagic.Scene({triggerElement: "#design"})
                     .setTween(designtween1) // trigger a TweenMax.to tween
                     .addTo(controller);
     
-    var designtween2 = TweenMax.from(".row2", 1, {y:100, opacity: 0, ease:Power2.easeOut});
+//    var designtween2 = TweenMax.from(".row2", 1, {y:100, opacity: 0, ease:Power2.easeOut});
+//    
+//    var designscene2 = new ScrollMagic.Scene({triggerElement: "#design", offset: 100})
+//                    .setTween(designtween2) // trigger a TweenMax.to tween
+//                    .addTo(controller);
     
-    var designscene2 = new ScrollMagic.Scene({triggerElement: "#design", offset: 100})
-                    .setTween(designtween2) // trigger a TweenMax.to tween
-                    .addTo(controller);
-    
-    var showcasetween = TweenMax.from("#btnViewProject", 1, {opacity: 0, ease:Power2.easeOut});
+    var showcasetween = TweenMax.from("#btn-expand", 1, {opacity: 0, ease:Power2.easeOut});
     
     var showcasescene = new ScrollMagic.Scene({triggerElement: "#showcase", offset: 300})
                     .setTween(showcasetween) // trigger a TweenMax.to tween
@@ -143,6 +195,41 @@ $(document).ready(function() {
                     .addTo(controller)
     
 });
+
+$("#btnCloseDesign").click(function(){
+    tl2.reverse();
+    designOpen = false;
+});
+
+    //Window scroll functions
+    $(window).scroll(function(){
+        
+        if (introOpen){
+            tl1.reverse();
+            //$("#design").goTo();
+            introOpen = false;
+        };
+        
+        if (designOpen){
+            console.log("design was open while scrolling");
+            tl2.reverse();
+            designOpen = false;
+        };
+        
+        //Close an open preview
+        if (expandActive){
+                var that = $("section.expanded");
+                that.find(".cover").show();
+                that.removeClass("expanded");
+                that.find(".carousel").carousel(0);
+                that.find(".carousel").one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+                    TweenMax.to(that.find(".cover"), 0.2, {opacity: 1, onComplete:function(){
+                        expandActive = false;
+                    }});
+                });
+        };
+        
+    });
 
 
 
@@ -177,4 +264,14 @@ function translatePage(lang) {
             });
         } 
     });
+}
+
+function splash(param) {
+    var time = param;
+    setTimeout(function(){
+       $("#splash").animate({opacity: 0}, 500, function(){
+           $(this).hide();
+           $("body").removeClass("no-scroll");
+       }); 
+    }, time);
 }

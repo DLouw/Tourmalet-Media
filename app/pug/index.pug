@@ -19,62 +19,85 @@ html(lang="en")
         link(href="css/mza.min.css", rel="stylesheet")
         //Favicon
         link(rel="icon", href="img/favicon.png")
-    body#page-top
+    body.no-scroll#page-top(onload="splash(3000)")
         // Navigation
         a.menu-toggle.rounded(href="#")
             i.fa.fa-bars
         nav#sidebar-wrapper
             ul.sidebar-nav
                 li.sidebar-brand
-                    a.js-scroll-trigger(href="#page-top") Tourmalet
+                    a.js-scroll-trigger(href="#page-top", data-lang="nav-title") Tourmalet
                 li.sidebar-nav-item
-                    a.js-scroll-trigger(href="#landing") Home
+                    a.js-scroll-trigger(href="#landing", data-lang="nav-home") Home
                 li.sidebar-nav-item
-                    a.js-scroll-trigger(href="#Design") Design
+                    a.js-scroll-trigger(href="#Design", data-lang="nav-design") Design
                 li.sidebar-nav-item
-                    a.js-scroll-trigger(href="#showcase") Projects
+                    a.js-scroll-trigger(href="#showcase", data-lang="nav-projects") Projects
                 li.sidebar-nav-item
-                    a.js-scroll-trigger(href="#contact") Contact
+                    a.js-scroll-trigger(href="#contact", data-lang="nav-contact") Contact
         // Header
+        #splash.splash.centre-xy
+            img.logo(src="img/logo_min.svg")
+            svg(width="100%", height="20px")
+                line(x1="0" y1="0" x2="100%" y2="0")
         #landing.full-section.centre-y
             div.container.text-center
-                img.logo.mb-5(src="img/logo.svg")
+                img#logo.logo.mb-5(src="img/logo.svg")
                 //.btn-group.d-block
                     a.btn.btn-secondary.js-scroll-trigger(href="#intro" onclick="translatePage('en')") English
                     a.btn.btn-secondary.js-scroll-trigger(href="#intro" onclick="translatePage('fr')") Française
-        #intro.full-section.content-section.text-center.centre-y
-            .container
-                h1(data-lang="title") Bespoke brand identity and web development
-                p(data-lang="p1") From Olympic athletes to internationally accredited doctors to niche beer breweries.
-                p(data-lang="p2") Tourmalet Media helps distinguished individuals and brands present themselves as such.
+        #intro.full-section.content-section.centre-xy
+            #div1.text-left
+                h1.intro-1(data-lang="intro-title") Creators of bespoke brands
+                hr.hr-small(align="left")
+                p.intro-1(data-lang="intro-p1") From Olympic athletes to internationally accredited doctors to niche beer breweries.
+                p.intro-1(data-lang="intro-p2") Tourmalet Media helps distinguished individuals and brands present themselves as such.
+                //a#btn-design.intro-1.btn.mt-3 Design Philosophy
+                a#btn-intro.btn.btn-primary.intro-1 Philosophy
+            #div2.text-left
+                h1.intro-2(data-lang="intro-title") Significance
+                hr.hr-small(align="left")
+                p.intro-2(data-lang="intro-p1") Tourmalet Media believes that a brand is defined by that which it refuses.
+                p.intro-2(data-lang="intro-p2") True to our European roots- we aim to consistently create clear aesthetics that communicate unencumbered logic.
+                a.btn.btn-primary.js-scroll-trigger(href="#design") continue         
         // Design
-        #design.double-page-section
-            .double-page-parent
-                .double-page-child.db-left
-                    .container.text-center
-                        .row
-                            .col-md-4
-                                img.mb-5.design-icon.row1(src="img/icons/mep.svg")
-                            .col-md-4
-                                img.mb-5.design-icon.row1(src="img/icons/hs.svg")
-                            .col-md-4
-                                img.mb-5.design-icon.row1(src="img/icons/im.svg")
-                            .col-md-4
-                                img.design-icon.row2(src="img/icons/bw.svg")
-                            .col-md-4
-                                img.design-icon.row2(src="img/icons/vl.svg")
-                            .col-md-4
-                                img.design-icon.row2(src="img/icons/dogma.svg")
-                .double-page-child.db-right.text-center.centre-y
-                    .container
-                        h1 Bespoke brand identity and web development
-                        p From Olympic athletes to internationally accredited doctors to niche beer breweries.
-                        p Tourmalet Media helps distinguished individuals and brands present themselves as such.
+        #design.full-section.centre-y.of-no
+            .container#container1.text-center
+                .row
+                    .col-md-4.col-6
+                        a
+                            img.mb-5.design-icon.row1(src="img/icons/mep.svg", data-desc="Brand development for ME P haute couture photography")
+                    .col-md-4.col-6
+                        a
+                            img.mb-5.design-icon.row1(src="img/icons/hs.svg", data-desc="Project with Olympic Medalist, Henri Schoeman, to develop his personal trademark.")
+                    .col-md-4.col-6
+                        a
+                            img.mb-5.design-icon.row1(src="img/icons/im.svg", data-desc="Branding consultation for boutique hotel and polo club, Inyanda Manor")
+                    .col-md-4.col-6
+                        a
+                            img.design-icon.row1(src="img/icons/bw.svg", data-desc="Branding project for high profile brittish Olympic champion. Further details may contractually not yet be disclosed.")
+                    .col-md-4.col-6
+                        a
+                            img.design-icon.row1(src="img/icons/vl.svg", data-desc="Brand consultation for Vincent Luis and his French brand")
+                    .col-md-4.col-6
+                        a
+                            img.design-icon.row1(src="img/icons/dogma.svg", data-desc="Dogma corporate image creation as well as web development")
+            .container#container2.centre-xy
+                a#btnCloseDesign
+                        i.fa.fa-2x.fa-times
+                img#brand-image.elems(src="img/icons/hs.svg")
+                .vert-spacer.elems.m-5
+                p.elems#brand-paragraph.text-gold This is a short description of the project conducted
         //Showcase
         section#showcase.centre-y
             .container-standard
                 .cover.p-5
-                    btn.btn-expand#btnViewProject.btn.btn-primary.pull-right Recent projects
+                    //btn.btn-expand#btnViewProject.btn.btn-primary.pull-right(data-lang="showcase-button") Recent projects
+                    a#btn-expand.btn.btn-halo.pull-right(data-lang="showcase-button")
+                        .svg-wrapper
+                            svg(height='40' width='250' xmlns='http://www.w3.org/2000/svg')
+                                rect.shape.theme-light(height='40' width='250')
+                            .text.theme-light Projects
                 .carousel#carousel-showcase.slide.h-100(data-ride='carousel',data-interval="false")
                             // Indicators
                             ul.carousel-indicators
@@ -87,18 +110,18 @@ html(lang="en")
                             // The slideshow
                             .carousel-inner.h-100
                                 #item1.carousel-item.active
-                                    h4.w-50 Featured on the custom bike of Olympic Medalist, Henri Schoeman
+                                    h4.w-50(data-lang="showcase-item1") Featured on the custom bike of Olympic Medalist, Henri Schoeman
                                 #item2.carousel-item
                                 #item3.carousel-item
-                                    h4.w-50 Brand identity and design for Red Bull ambassador, Richard Murray
+                                    h4.w-50(data-lang="showcase-item3") Brand identity and design for Red Bull ambassador, Richard Murray
                                 #item4.carousel-item
                                     h4.w-50 
                                 #item5.carousel-item
-                                    h4.w-50 Brand identity and design for The Nunez Hurley Academy
+                                    h4.w-50(data-lang="showcase-item5") Brand identity and design for The Nunez Hurley Academy
                                 #item6.carousel-item
                                     h4.w-50
                                 #item7.carousel-item
-                                    h4.w-50 Web and design projects for 7 x triathlon world champion, Conrad Stoltz
+                                    h4.w-50(data-lang="showcase-item7") Web and design projects for 7 x triathlon world champion, Conrad Stoltz
                                 #item8.carousel-item
                                 //#item9.carousel-item.centre-y
                                     .row
@@ -122,11 +145,11 @@ html(lang="en")
                 img#contact-icon.d-inline(src="img/logo.svg")
                 h1.d-inline.ml-2.ml-md-5 |
                 a#contact-link(href="mailto:dehanlouw@icloud.com")
-                    h2.d-inline.ml-2.ml-md-5 contact
+                    h2.d-inline.ml-2.ml-md-5(data-lang="contact-button") contact
         // Footer
         footer.footer.text-center
             .container-full
-                a.text-muted.small.mb-0(href="mailto:dehanlouw@icloud.com") Copyright © Tourmalet Media 2018
+                a.text-muted.small.mb-0(href="mailto:dehanlouw@icloud.com", data-lang="copyright") Copyright © Tourmalet Media 2018
         // Scroll to Top Button
         a.scroll-to-top.rounded.js-scroll-trigger(href="#page-top")
             i.fa.fa-angle-up
@@ -134,6 +157,7 @@ html(lang="en")
             
         // Bootstrap core JavaScript
         script(src="vendor/jquery/jquery.js")
+        script(src="vendor/imagesloaded/imagesloaded.pkgd.min.js")
         script(src="vendor/bootstrap/js/bootstrap.min.js")
         // Plugin JavaScript
         script(src="vendor/jquery-easing/jquery.easing.min.js")

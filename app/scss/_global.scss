@@ -2,10 +2,17 @@ body,
 html {
   width: 100%;
   height: 100%;
+ position: relative;
+ z-index: 0;
+ overflow: visible;
 }
 
 body {
   @include body-font;
+}
+
+.no-scroll{
+    overflow: hidden;
 }
 
 // Custom Button Size
@@ -13,16 +20,17 @@ body {
   padding: 1.25rem 2.5rem;
 }
 
-
 // Content Section
 .content-section {
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .full-section{
   position: relative;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 }
 
@@ -37,6 +45,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .centre-x{
@@ -202,6 +211,10 @@ h6 {
     .db-right{
         left: 100%;
         margin-left: 0%;
+    }
+    
+    .of-no{
+        overflow: hidden;
     }
 
 }

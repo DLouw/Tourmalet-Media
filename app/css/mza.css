@@ -6,21 +6,29 @@
 body,
 html {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  position: relative;
+  z-index: 0;
+  overflow: visible; }
 
 body {
   font-family: Montserrat, sans-serif; }
+
+.no-scroll {
+  overflow: hidden; }
 
 .btn-xl {
   padding: 1.25rem 2.5rem; }
 
 .content-section {
   padding-top: 7.5rem;
-  padding-bottom: 7.5rem; }
+  padding-bottom: 7.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem; }
 
 .full-section {
   position: relative;
-  height: 100%;
+  min-height: 100%;
   width: 100%; }
 
 .centre-y {
@@ -30,7 +38,8 @@ body {
 .centre-xy {
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center; }
 
 .centre-x {
   display: flex;
@@ -142,7 +151,9 @@ h6 {
     left: 0%; }
   .db-right {
     left: 100%;
-    margin-left: 0%; } }
+    margin-left: 0%; }
+  .of-no {
+    overflow: hidden; } }
 
 .masthead {
   min-height: 30rem;
@@ -179,7 +190,7 @@ h6 {
   -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   transform: translateX(250px);
-  background: black;
+  background: #212529;
   border-left: 1px solid rgba(255, 255, 255, 0.1); }
 
 .sidebar-nav {
@@ -293,15 +304,37 @@ h6 {
     cursor: pointer;
     margin-bottom: 50px;
     margin-top: 50px; }
+  #design #container2 {
+    flex-direction: column;
+    display: none; }
+    @media (min-width: 768px) {
+      #design #container2 {
+        flex-direction: row; } }
+  #design #imgWrapper {
+    position: relative; }
+  #design #btnCloseDesign {
+    position: absolute;
+    left: 50px;
+    top: 50px; }
+  #design #brand-image {
+    height: 10rem;
+    max-width: 20rem; }
+  #design #brand-paragraph {
+    max-width: 30rem; }
 
 #landing {
   background-image: url("../img/loften.jpg");
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  opacity: 0; }
   #landing .logo {
     width: 250px; }
+  #landing #path {
+    transition: all 1s ease-in;
+    stroke-dasharray: 350;
+    stroke-dashoffset: 350; }
   @media (min-width: 768px) {
     #landing .logo {
       width: 450px; } }
@@ -438,7 +471,7 @@ h6 {
         -webkit-clip-path: inset(2rem);
         clip-path: inset(2rem); }
       .portfolio-item:hover .caption {
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(33, 37, 41, 0.9);
         -webkit-clip-path: inset(2rem);
         clip-path: inset(2rem); } }
 
@@ -480,18 +513,18 @@ footer.footer {
         max-height: 100px; } }
 
 a {
-  color: black; }
+  color: #212529; }
   a:hover, a:focus, a:active {
     color: silver !important;
     text-decoration: none; }
 
 .btn-primary {
-  background-color: black !important;
+  background-color: #212529 !important;
   border-color: silver !important;
   color: silver !important; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    background-color: black !important;
-    border-color: black !important; }
+    background-color: #0a0c0d !important;
+    border-color: #0a0c0d !important; }
 
 .btn-secondary {
   background-color: silver !important;
@@ -513,10 +546,10 @@ a {
   font-weight: 700; }
 
 .bg-primary {
-  background-color: black !important; }
+  background-color: #212529 !important; }
 
 .text-primary {
-  color: black !important; }
+  color: #212529 !important; }
 
 .text-secondary {
   color: silver !important; }
@@ -540,6 +573,14 @@ h4 {
   font-family: Open Sans, sans-serif;
   font-weight: 300;
   font-size: 1.2rem; }
+
+@media (min-width: 768px) {
+  p {
+    max-width: 768px; } }
+
+.shutter-wrapper {
+  max-height: 0px;
+  overflow: hidden; }
 
 .z-top {
   position: relative;
@@ -574,3 +615,120 @@ a {
     .container-standard {
       width: 1170px;
       height: 600px; } }
+
+.btn-halo .svg-wrapper {
+  height: 40px;
+  margin: 0 auto;
+  position: relative;
+  width: 250px; }
+
+.btn-halo .shape {
+  fill: transparent;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -350;
+  stroke-width: 4px;
+  stroke: black; }
+
+.btn-halo .shape.theme-light {
+  stroke: silver; }
+
+.btn-halo .text {
+  color: black;
+  font-size: 18px;
+  letter-spacing: 8px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%; }
+
+.btn-halo .text.theme-light {
+  color: silver; }
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -354;
+    stroke-width: 8px; }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+    stroke: #B8AA99; } }
+
+.btn-halo .svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards; }
+
+.text-gold {
+  color: #806600 !important; }
+
+.vert-spacer {
+  width: 200px;
+  border-bottom: 2px solid;
+  height: 1px; }
+  @media (min-width: 768px) {
+    .vert-spacer {
+      height: 200px;
+      border-right: 2px solid;
+      width: 1px; } }
+
+.hr-small {
+  width: 50px;
+  border-top: 2px solid black; }
+
+.splash {
+  background-color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  transition: all 1s ease-out;
+  opacity: 1; }
+  .splash .logo {
+    width: 100px; }
+  .splash svg {
+    position: absolute;
+    bottom: 20%; }
+  .splash line {
+    stroke-width: 4px;
+    stroke: grey;
+    stroke-dasharray: 100vw;
+    animation: 2s load ease-in infinite; }
+
+@keyframes load {
+  0% {
+    stroke-width: 1px; }
+  30% {
+    stroke-width: 7px;
+    stroke: #B8AA99; }
+  600% {
+    stroke-width: 5px;
+    stroke: #B8AA99; }
+  100% {
+    stroke-width: 1px;
+    stroke: grey; } }
+  .splash .hide {
+    background-color: none !important; }
+
+#intro p {
+  max-width: 500px; }
+
+#intro .intro-2 {
+  opacity: 1; }
+
+#intro .intro-3 {
+  opacity: 1;
+  color: #806600; }
+
+#intro #div2 {
+  display: none; }
+
+#intro .btn {
+  background: none !important;
+  box-shadow: none; }
+
+#intro h1 {
+  margin-bottom: 20px; }

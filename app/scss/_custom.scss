@@ -21,6 +21,20 @@ h4{
     font-size: 1.2rem;
 }
 
+//Make paragraphs narrower on wide screens
+p{
+    @media (min-width: 768px){
+       max-width: 768px; 
+    }
+    
+}
+
+    
+.shutter-wrapper{
+    max-height: 0px;
+    overflow: hidden;
+}
+
 .z-top{
     position: relative;
     z-index: 1000;
@@ -72,6 +86,88 @@ a{
 
         }
 
-
-
     }
+
+//Custom halo button developed for this project
+.btn-halo{
+  
+    .svg-wrapper {
+      height: 40px;
+      margin: 0 auto;
+      position: relative;
+      //top: 50%;
+      //transform: translateY(-50%);
+      width: 250px;
+    }
+
+    .shape {
+      fill: transparent;
+      stroke-dasharray: 140 540;
+      stroke-dashoffset: -350;
+      stroke-width: 4px;
+      stroke: black;
+    }
+    
+    .shape.theme-light{
+        stroke: silver;
+    }
+
+    .text {
+      color: black;
+      font-size: 18px;
+      letter-spacing: 8px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      left: 50%;
+    }
+    
+    .text.theme-light{
+        color: silver;
+    }
+    
+
+    @keyframes draw {
+      0% {
+        stroke-dasharray: 140 540;
+        stroke-dashoffset: -354;
+        stroke-width: 8px;
+      }
+      100% {
+        stroke-dasharray: 760;
+        stroke-dashoffset: 0;
+        stroke-width: 2px;
+        stroke: #B8AA99;
+      }
+    }
+
+    .svg-wrapper:hover .shape {
+      -webkit-animation: 0.5s draw linear forwards;
+      animation: 0.5s draw linear forwards;
+    }
+    
+
+}
+
+.text-gold{
+        color: #806600 !important;
+    }
+
+ .vert-spacer{
+            width: 200px;
+            border-bottom: 2px solid;
+            height: 1px;
+     
+         @media(min-width: 768px){
+            height: 200px;
+            border-right: 2px solid;
+            width: 1px;
+         }
+    }
+
+.hr-small{
+    width: 50px;
+    border-top: 2px solid black;
+}
+
+    

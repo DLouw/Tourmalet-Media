@@ -83,8 +83,8 @@ gulp.task('pug', function buildHTML() {
 // Copy vendor files from /node_modules into /vendor
 gulp.task('copy', function() {
 
-//  gulp.src(['app/img/**/*'])
-//    .pipe(gulp.dest('dist/img'))
+  gulp.src(['app/img/**/*'])
+    .pipe(gulp.dest('dist/img'))
      
 
   gulp.src([
@@ -113,6 +113,9 @@ gulp.task('copy', function() {
 
   gulp.src(['node_modules/simple-line-icons/*/*'])
     .pipe(gulp.dest('dist/vendor/simple-line-icons'))
+    
+    gulp.src(['node_modules/imagesloaded/imagesloaded.pkgd.min.js'])
+    .pipe(gulp.dest('dist/vendor/imagesloaded'))
     
     gulp.src(['node_modules/gsap/src/minified/TweenMax.min.js'])
     .pipe(gulp.dest('dist/vendor/gsap'))

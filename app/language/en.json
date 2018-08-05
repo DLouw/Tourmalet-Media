@@ -1,5 +1,17 @@
 {
-    "title":"Bespoke brand identity and web development",
-    "p1":"From Olympic athletes to internationally accredited doctors to niche beer breweries.",
-    "p2":"Tourmalet Media helps distinguished individuals and brands present themselves as such."
+    "nav-title":"Tourmalet",
+    "nav-home":"Home",
+    "nav-design":"Design",
+    "nav-projects":"Projects",
+    "nav-Contact":"Contact",
+    "intro-title":"Bespoke brand identity and web development",
+    "intro-p1":"From Olympic athletes to internationally accredited doctors to niche beer breweries.",
+    "intro-p2":"Tourmalet Media helps distinguished individuals and brands present themselves as such.",
+    "showcase-button":"Recent Projects",
+    "showcase-item1":"Featured on the custom bike of Olympic Medalist, Henri Schoeman",
+    "showcase-item3":"Brand identity and design for Red Bull ambassador, Richard Murray",
+    "showcase-item5":"Brand identity and design for The Nunez Hurley Academy",
+    "showcase-item7":"Web and design projects for 7 x triathlon world champion, Conrad Stoltz",
+    "contact-button":"Contact",
+    "copyright":" Copyright © Tourmalet Media 2018"
 }
