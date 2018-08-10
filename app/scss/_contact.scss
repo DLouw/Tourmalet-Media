@@ -1,17 +1,16 @@
 // Callout
 #contact {
     
-    height: 50%;
-   
-    img{
-        width: 120px;
+    min-height: 50%;
+    
+    .icon{
+        font-size: 50px;
     }
     
-    @media(min-width:768px){
-        
-        img{
-            width: 180px;
-        }
+    .logo{
+        height: 50px;
     }
+    
+    
     
 }

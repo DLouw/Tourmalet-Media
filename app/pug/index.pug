@@ -19,7 +19,7 @@ html(lang="en")
         link(href="css/mza.min.css", rel="stylesheet")
         //Favicon
         link(rel="icon", href="img/favicon.png")
-    body.no-scroll#page-top(onload="splash(3000)")
+    body.no-scroll#page-top(onload="splash(100)")
         // Navigation
         a.menu-toggle.rounded(href="#")
             i.fa.fa-bars
@@ -38,8 +38,13 @@ html(lang="en")
         // Header
         #splash.splash.centre-xy
             img.logo(src="img/logo_min.svg")
-            svg(width="100%", height="20px")
-                line(x1="0" y1="0" x2="100%" y2="0")
+            .wrap.text-center
+                .lang-select.mt-5
+                    a.btn-lang.mr-2(data-sel="en") English
+                    //span.m-2 |
+                    a.btn-lang(data-sel="fr") Française
+                svg.load-line()
+                    line(x1="0" y1="0" x2="100%" y2="0")
         #landing.full-section.centre-y
             div.container.text-center
                 img#logo.logo.mb-5(src="img/logo.svg")
@@ -49,17 +54,17 @@ html(lang="en")
         #intro.full-section.content-section.centre-xy
             #div1.text-left
                 h1.intro-1(data-lang="intro-title") Creators of bespoke brands
-                hr.hr-small(align="left")
+                hr.hr-small.tw2(align="left")
                 p.intro-1(data-lang="intro-p1") From Olympic athletes to internationally accredited doctors to niche beer breweries.
                 p.intro-1(data-lang="intro-p2") Tourmalet Media helps distinguished individuals and brands present themselves as such.
                 //a#btn-design.intro-1.btn.mt-3 Design Philosophy
                 a#btn-intro.btn.btn-primary.intro-1 Philosophy
             #div2.text-left
                 h1.intro-2(data-lang="intro-title") Significance
-                hr.hr-small(align="left")
+                hr.hr-small.tw3(align="left")
                 p.intro-2(data-lang="intro-p1") Tourmalet Media believes that a brand is defined by that which it refuses.
-                p.intro-2(data-lang="intro-p2") True to our European roots- we aim to consistently create clear aesthetics that communicate unencumbered logic.
-                a.btn.btn-primary.js-scroll-trigger(href="#design") continue         
+                p.intro-2(data-lang="intro-p2") True to our European roots- we aim to consistently create minimalist aesthetics that communicate unencumbered and purposeful logic.
+                a.js-scroll-trigger(href="#design")#btn-continue.btn.btn-primary continue         
         // Design
         #design.full-section.centre-y.of-no
             .container#container1.text-center
@@ -141,11 +146,17 @@ html(lang="en")
                                 span.carousel-control-next-icon
         //Contact
         section#contact.centre-y
-            .container.text-center
-                img#contact-icon.d-inline(src="img/logo.svg")
-                h1.d-inline.ml-2.ml-md-5 |
-                a#contact-link(href="mailto:dehanlouw@icloud.com")
-                    h2.d-inline.ml-2.ml-md-5(data-lang="contact-button") contact
+            .container
+                .row.text-center
+                    .col-md-4.mb-5
+                        img.logo(src="img/logo_min.svg")
+                    .col-md-4.mb-5
+                        a(href="mailto:dehanlouw@icloud.com")
+                            i.icon.icon-envelope
+                    .col-md-4.mb-5
+                        a.js-scroll-trigger(href="#page-top")
+                            i.icon.icon-arrow-up    
+            
         // Footer
         footer.footer.text-center
             .container-full

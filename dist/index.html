@@ -22,7 +22,7 @@
     <link rel="icon" href="img/favicon.png">
 </head>
 
-<body class="no-scroll" id="page-top" onload="splash(3000)">
+<body class="no-scroll" id="page-top" onload="splash(100)">
     <!-- Navigation--><a class="menu-toggle rounded" href="#"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
@@ -34,7 +34,11 @@
         </ul>
     </nav>
     <!-- Header-->
-    <div class="splash centre-xy" id="splash"><img class="logo" src="img/logo_min.svg"><svg width="100%" height="20px"><line x1="0" y1="0" x2="100%" y2="0"></line></svg></div>
+    <div class="splash centre-xy" id="splash"><img class="logo" src="img/logo_min.svg">
+        <div class="wrap text-center">
+            <div class="lang-select mt-5"><a class="btn-lang mr-2" data-sel="en">English</a>
+                <!--span.m-2 |--><a class="btn-lang" data-sel="fr">Française</a></div><svg class="load-line"><line x1="0" y1="0" x2="100%" y2="0"></line></svg></div>
+    </div>
     <div class="full-section centre-y" id="landing">
         <div class="container text-center"><img class="logo mb-5" id="logo" src="img/logo.svg">
             <!--.btn-group.d-blocka.btn.btn-secondary.js-scroll-trigger(href="#intro" onclick="translatePage('en')") English
@@ -44,15 +48,15 @@ a.btn.btn-secondary.js-scroll-trigger(href="#intro" onclick="translatePage('fr')
     <div class="full-section content-section centre-xy" id="intro">
         <div class="text-left" id="div1">
             <h1 class="intro-1" data-lang="intro-title">Creators of bespoke brands</h1>
-            <hr class="hr-small" align="left">
+            <hr class="hr-small tw2" align="left">
             <p class="intro-1" data-lang="intro-p1">From Olympic athletes to internationally accredited doctors to niche beer breweries.</p>
             <p class="intro-1" data-lang="intro-p2">Tourmalet Media helps distinguished individuals and brands present themselves as such.</p>
             <!--a#btn-design.intro-1.btn.mt-3 Design Philosophy--><a class="btn btn-primary intro-1" id="btn-intro">Philosophy</a></div>
         <div class="text-left" id="div2">
             <h1 class="intro-2" data-lang="intro-title">Significance</h1>
-            <hr class="hr-small" align="left">
+            <hr class="hr-small tw3" align="left">
             <p class="intro-2" data-lang="intro-p1">Tourmalet Media believes that a brand is defined by that which it refuses.</p>
-            <p class="intro-2" data-lang="intro-p2">True to our European roots- we aim to consistently create clear aesthetics that communicate unencumbered logic.</p><a class="btn btn-primary js-scroll-trigger" href="#design">continue         </a></div>
+            <p class="intro-2" data-lang="intro-p2">True to our European roots- we aim to consistently create minimalist aesthetics that communicate unencumbered and purposeful logic.</p><a class="js-scroll-trigger btn btn-primary" href="#design" id="btn-continue">continue         </a></div>
     </div>
     <!-- Design-->
     <div class="full-section centre-y of-no" id="design">
@@ -130,11 +134,12 @@ a.btn.btn-secondary.js-scroll-trigger(href="#intro" onclick="translatePage('fr')
     </section>
     <!--Contact-->
     <section class="centre-y" id="contact">
-        <div class="container text-center"><img class="d-inline" id="contact-icon" src="img/logo.svg">
-            <h1 class="d-inline ml-2 ml-md-5">|</h1>
-            <a id="contact-link" href="mailto:dehanlouw@icloud.com">
-                <h2 class="d-inline ml-2 ml-md-5" data-lang="contact-button">contact</h2>
-            </a>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-5"><img class="logo" src="img/logo_min.svg"></div>
+                <div class="col-md-4 mb-5"><a href="mailto:dehanlouw@icloud.com"><i class="icon icon-envelope"></i></a></div>
+                <div class="col-md-4 mb-5"><a class="js-scroll-trigger" href="#page-top"><i class="icon icon-arrow-up">   </i></a></div>
+            </div>
         </div>
     </section>
     <!-- Footer-->

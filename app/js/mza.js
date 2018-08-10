@@ -90,22 +90,14 @@ $(document).ready(function() {
         });
        
     });
-    //$("#div2").hide();
-    
-//    $("#btn-design").click(function(){
-//        TweenMax.staggerTo(".intro-1", 0.4, {opacity: 0, x:100, onComplete:function(){
-//                $("#div1").hide();    
-//                //$("#div2").show();
-//                TweenMax.to("#div2", 0.5, {display:"block", autoAlpha: 1}, 1);
-//            }
-//        }, 0.05);
-//    });
+
     
 
     
-    tl1 = new TimelineMax({paused:true});
+    tlIntroOpen = new TimelineMax({paused:true});
     
-    tl1.staggerTo(".intro-1", 0.4, {opacity: 0, x:100}, 0.05)
+    tlIntroOpen.to(".tw2", 1, { width:"0px", opacity:0})
+            .staggerTo(".intro-1", 0.4, {opacity: 0, x:100}, 0.05)
             .to("#div1", 0, { display:"none"})
             .to("#div2", 0, {display:"block"}, "+=0.2")
             .staggerFrom(".intro-2", 0.4, {opacity: 0, y:10}, 0.1)
@@ -116,9 +108,28 @@ $(document).ready(function() {
     
       $("#btn-intro").click(function(){
             
-    tl1.play();
+    tlIntroOpen.play();
         
     });
+    
+//    tlIntroContinue = new TimelineMax({paused: true});
+//    
+//    tlIntroContinue.to(".tw2",1,{width: 0})
+    
+//      $("#btn-continue").click(function(){
+//            
+//        
+//        tlIntroOpen.eventCallback("onReverseComplete", function(){
+//            $("#design").goTo();
+//        });
+//        
+//        tlIntroOpen.reverse();
+//        
+//    
+//        
+//    });
+    
+    
     
     
     tl2 = new TimelineMax();
@@ -144,6 +155,12 @@ $(document).ready(function() {
         
     });
     
+//     var tweenDesignLeave = TweenMax.staggerTo(".row1", 1, {y:"-100", opacity: 0, ease:Power2.easeOut}, 0.1);
+//    
+//     var sceneDesignLeave = new ScrollMagic.Scene({triggerElement: "#design", triggerHook:"onLeave",offset: "-300"})
+//                    .setTween(tweenDesignLeave) // trigger a TweenMax.to tween
+//                    .addTo(controller);
+    
     
     // Scrollmagic scenes
 //    var webtween = TweenMax.staggerTo(".flip-container .flipper", 2, {rotationY:"180_cw", delay:0.5, ease:Elastic.easeOut, force3D:true}, 0.15);
@@ -152,17 +169,23 @@ $(document).ready(function() {
 //                    .setTween(webtween) // trigger a TweenMax.to tween
 //                    .addTo(controller);
     
-    var landtween = TweenMax.to("#landing .logo", 1, {y:"-200%", ease:Power1.easeIn});
-    
-    var landscene = new ScrollMagic.Scene({triggerElement: "#landing", triggerHook: "onLeave", duration:"10%"})
-                    .setTween(landtween) // trigger a TweenMax.to tween
-                    .addTo(controller);
-    
-//    var introtween1 = TweenMax.staggerFrom(".intro-1", 1, {opacity: 0, y: 200, ease:Power2.easeOut}, 0.1);
+//    var landtween = TweenMax.to("#landing .logo", 1, {y:"-200%", opacity:0, ease:Power3.easeIn});
 //    
-//    var introscene1 = new ScrollMagic.Scene({triggerElement: "#intro-title", triggerHook: "onEnter", offset: 100})
-//                    .setTween(introtween1) // trigger a TweenMax.to tween
+//    var landscene = new ScrollMagic.Scene({triggerElement: "#landing", triggerHook: "onLeave", offset: 100})
+//                    .setTween(landtween) // trigger a TweenMax.to tween
 //                    .addTo(controller);
+    
+    //var introtween1 = TweenMax.staggerFrom(".intro-1", 1, {opacity: 0, y: 200, ease:Power2.easeOut}, 0.1);
+    
+    var tlIntro = new TimelineMax({delay: 0.5});
+    
+    tlIntro.staggerFrom(".intro-1", 1, {opacity: 0, y: 200, ease:Power2.easeOut}, 0.2)
+            .from(".tw2", 1, { width:"0px", opacity:0})
+            .to(".tw2", 3, { borderColor:"black"});
+    
+    var introscene1 = new ScrollMagic.Scene({triggerElement: "#intro", offset: 100})
+                    .setTween(tlIntro) // trigger a TweenMax.to tween
+                    .addTo(controller);
     
     var designtween1 = TweenMax.staggerFrom(".row1", 1, {y:100, opacity: 0, ease:Power2.easeOut}, 0.1);
     
@@ -194,6 +217,25 @@ $(document).ready(function() {
                     .setTween(showcase2tween) // trigger a TweenMax.to tween
                     .addTo(controller)
     
+    $(".btn-lang").click(function(){
+        translatePage($(this).data("sel"));
+//       $("#splash").animate({opacity: 0}, 500, function(){
+//           $(this).hide();
+//           $("body").removeClass("no-scroll");
+//       }); 
+        
+    var tlLang = new TimelineMax();
+        
+    tlLang.to(".load-line", 1, {width:"0px"})
+        .to(".lang-select",0.1, {opacity: 0})
+        .to(".load-line", 0.5, {width:"0px"},"+= -0.1")
+        .to("#splash", 0.5, {opacity:0, onComplete: function(){
+            $("#splash").hide;
+            $("body").removeClass("no-scroll");
+        }});
+        
+    });
+    
 });
 
 $("#btnCloseDesign").click(function(){
@@ -205,7 +247,7 @@ $("#btnCloseDesign").click(function(){
     $(window).scroll(function(){
         
         if (introOpen){
-            tl1.reverse();
+            tlIntroOpen.reverse();
             //$("#design").goTo();
             introOpen = false;
         };
@@ -268,10 +310,22 @@ function translatePage(lang) {
 
 function splash(param) {
     var time = param;
+    
+
+    
     setTimeout(function(){
-       $("#splash").animate({opacity: 0}, 500, function(){
-           $(this).hide();
-           $("body").removeClass("no-scroll");
-       }); 
+        
+        console.log("splashing");
+        
+    var tlSplash = new TimelineMax({paused:true});
+    
+    tlSplash.to(".load-line", 1, {width:"170px"})
+            .to("#splash .logo", 0.5, {opacity:0} )
+            .to(".lang-select",1, {opacity: 1}, "+=0.2");
+        
+    tlSplash.play();
+    
+    
+        
     }, time);
 }

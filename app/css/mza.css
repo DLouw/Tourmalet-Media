@@ -419,12 +419,11 @@ h6 {
     height: 100px; }
 
 #contact {
-  height: 50%; }
-  #contact img {
-    width: 120px; }
-  @media (min-width: 768px) {
-    #contact img {
-      width: 180px; } }
+  min-height: 50%; }
+  #contact .icon {
+    font-size: 50px; }
+  #contact .logo {
+    height: 50px; }
 
 .portfolio-item {
   display: block;
@@ -673,8 +672,9 @@ a {
       width: 1px; } }
 
 .hr-small {
-  width: 50px;
-  border-top: 2px solid black; }
+  width: 100px;
+  border-top: 2px solid black;
+  border-color: #C5B358; }
 
 .splash {
   background-color: white;
@@ -687,16 +687,21 @@ a {
   z-index: 10000;
   transition: all 1s ease-out;
   opacity: 1; }
+  .splash .lang-select {
+    opacity: 0; }
+  .splash .wrap {
+    width: 100%;
+    position: relative; }
   .splash .logo {
     width: 100px; }
   .splash svg {
-    position: absolute;
-    bottom: 20%; }
+    position: relative;
+    width: 100%;
+    height: 5px; }
   .splash line {
     stroke-width: 4px;
     stroke: grey;
-    stroke-dasharray: 100vw;
-    animation: 2s load ease-in infinite; }
+    stroke-dasharray: 100vw; }
 
 @keyframes load {
   0% {
