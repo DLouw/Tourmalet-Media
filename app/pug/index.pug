@@ -53,40 +53,40 @@ html(lang="en")
                     a.btn.btn-secondary.js-scroll-trigger(href="#intro" onclick="translatePage('fr')") Française
         #intro.full-section.content-section.centre-xy
             #div1.text-left
-                h1.intro-1(data-lang="intro-title") Creators of bespoke brands
+                h1.intro-1(data-lang="intro-t1") Creators of bespoke brands
                 hr.hr-small.tw2(align="left")
-                p.intro-1(data-lang="intro-p1") From Olympic athletes to internationally accredited doctors to niche beer breweries.
+                p.intro-1(data-lang="intro-p1") From Olympic athletes to internationally accredited doctors to disruptive business consultants
                 p.intro-1(data-lang="intro-p2") Tourmalet Media helps distinguished individuals and brands present themselves as such.
                 //a#btn-design.intro-1.btn.mt-3 Design Philosophy
-                a#btn-intro.btn.btn-primary.intro-1 Philosophy
+                a#btn-intro.btn.btn-primary.intro-1(data-lang="intro-b1") Open
             #div2.text-left
-                h1.intro-2(data-lang="intro-title") Significance
+                h1.intro-2(data-lang="intro-t2") Significance
                 hr.hr-small.tw3(align="left")
-                p.intro-2(data-lang="intro-p1") Tourmalet Media believes that a brand is defined by that which it refuses.
-                p.intro-2(data-lang="intro-p2") True to our European roots- we aim to consistently create minimalist aesthetics that communicate unencumbered and purposeful logic.
-                a.js-scroll-trigger(href="#design")#btn-continue.btn.btn-primary continue         
+                p.intro-2(data-lang="intro-p3") Tourmalet Media believes that a brand is defined by that which it refuses.
+                p.intro-2(data-lang="intro-p4") True to our European roots- we aim to consistently create minimalist aesthetics that communicate unencumbered and purposeful logic.
+                a.js-scroll-trigger(href="#design")#btn-continue.btn.btn-primary(data-lang="intro-b2") continue         
         // Design
         #design.full-section.centre-y.of-no
             .container#container1.text-center
                 .row
                     .col-md-4.col-6
                         a
-                            img.mb-5.design-icon.row1(src="img/icons/mep.svg", data-desc="Brand development for ME P haute couture photography")
+                            img.mb-5.design-icon.row1(src="img/icons/mep.svg", data-desc="Brand development for ME P haute couture photography",data-lang="design-mep")
                     .col-md-4.col-6
                         a
-                            img.mb-5.design-icon.row1(src="img/icons/hs.svg", data-desc="Project with Olympic Medalist, Henri Schoeman, to develop his personal trademark.")
+                            img.mb-5.design-icon.row1(src="img/icons/hs.svg", data-desc="Project with Olympic Medalist, Henri Schoeman, to develop his personal trademark.",data-lang="design-hs")
                     .col-md-4.col-6
                         a
-                            img.mb-5.design-icon.row1(src="img/icons/im.svg", data-desc="Branding consultation for boutique hotel and polo club, Inyanda Manor")
+                            img.mb-5.design-icon.row1(src="img/icons/im.svg", data-desc="Branding consultation for boutique hotel and polo club, Inyanda Manor",data-lang="design-im")
                     .col-md-4.col-6
                         a
-                            img.design-icon.row1(src="img/icons/bw.svg", data-desc="Branding project for high profile brittish Olympic champion. Further details may contractually not yet be disclosed.")
+                            img.design-icon.row1(src="img/icons/bw.svg", data-desc="Branding project for high profile brittish Olympic champion. Further details may contractually not yet be disclosed.",data-lang="design-bw")
                     .col-md-4.col-6
                         a
-                            img.design-icon.row1(src="img/icons/vl.svg", data-desc="Brand consultation for Vincent Luis and his French brand")
+                            img.design-icon.row1(src="img/icons/vl.svg", data-desc="Brand consultation for Vincent Luis and his French brand VLFR.",data-lang="design-vl")
                     .col-md-4.col-6
                         a
-                            img.design-icon.row1(src="img/icons/dogma.svg", data-desc="Dogma corporate image creation as well as web development")
+                            img.design-icon.row1(src="img/icons/dogma.svg", data-desc="Dogma corporate image creation as well as web development",data-lang="design-dogma")
             .container#container2.centre-xy
                 a#btnCloseDesign
                         i.fa.fa-2x.fa-times
@@ -97,7 +97,6 @@ html(lang="en")
         section#showcase.centre-y
             .container-standard
                 .cover.p-5
-                    //btn.btn-expand#btnViewProject.btn.btn-primary.pull-right(data-lang="showcase-button") Recent projects
                     a#btn-expand.btn.btn-halo.pull-right(data-lang="showcase-button")
                         .svg-wrapper
                             svg(height='40' width='250' xmlns='http://www.w3.org/2000/svg')
