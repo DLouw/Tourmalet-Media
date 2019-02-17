@@ -125,6 +125,9 @@ gulp.task('copy', function() {
              'node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js'])
     .pipe(gulp.dest('dist/vendor/scrollmagic'))
     
+    gulp.src(['app/vendor/OnePage/onepage.js'])
+    .pipe(gulp.dest('dist/vendor/onepage'))
+    
   gulp.src(['serverside/*.php'])
     .pipe(gulp.dest('dist/serverside/'))
 });

@@ -15,6 +15,10 @@ label {
     margin-bottom: 20px;
 }
 
+.btn{
+    background-color: transparent !important;
+}
+
 h4{
     font-family:  Open Sans, sans-serif;
     font-weight: 300;
@@ -114,8 +118,8 @@ a{
 
     .text {
       color: black;
-      font-size: 18px;
-      letter-spacing: 8px;
+      //font-size: 18px;
+      //letter-spacing: 8px;
       position: absolute;
       top: 50%;
       transform: translateY(-50%) translateX(-50%);
@@ -166,9 +170,75 @@ a{
     }
 
 .hr-small{
-    width: 100px;
+    width: 50px;
     border-top: 2px solid black;
-    border-color: $gold;
+    border-color: black;
 }
 
+
+.text-wrapper{
     
+    max-width: 300px;
+    text-align: left;
+    
+    @media(min-width: 768px){
+        max-width: 500px;
+    }
+}
+
+
+
+//AppLikeOnePAge
+
+#radioWrap {
+  width: 20px;
+  height: 180px;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  margin-top: -90px;
+    
+    //Hide for mobile. Not enough space
+    @media(max-width:768px){
+        display: none;
+    }
+}
+
+#radio {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+
+#radio li {
+  width: 15px;
+  height: 15px;
+  //background-color: rgba(255,255,255, 0.5);
+  background-color: grey;
+  text-indent: -10000px;
+  border-radius: 50%;
+  margin-top: 12px;
+  cursor: pointer;
+}
+ 
+#radio li:first-child { margin-top: 0; }
+ 
+#radioOn {
+  width: 15px;
+  height: 15px;
+  margin-bottom: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: grey;
+  border-radius: 50%;
+}
+
+.more-link{
+    color: goldenrod !important;
+    
+    .fa{
+        margin-right: 5px;
+    }
+}

@@ -1,6 +1,6 @@
 // Splash screen
 .splash {
-background-color: white;
+    background-color: white;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -63,6 +63,11 @@ background-color: white;
         background-color: none !important;
     }
     
+    .btn-lang{
+        &:hover{
+            color: #806600;
+        }
+    }
     
 }
 

@@ -6,157 +6,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Tourmalet Media</title>
-    <!-- Bootstrap Core CSS-->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom Fonts-->
+    <title>Tourmalet Media</title><!-- Bootstrap Core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"><!-- Custom Fonts-->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     <!--Simple Line Icons-->
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-    <!-- Custom CSS-->
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet"><!-- Custom CSS-->
     <link href="css/mza.min.css" rel="stylesheet">
     <!--Favicon-->
     <link rel="icon" href="img/favicon.png">
 </head>
 
-<body class="no-scroll" id="page-top" onload="splash(100)">
+<body id="page-top" onload="splash(0)">
     <!-- Navigation--><a class="menu-toggle rounded" href="#"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <li class="sidebar-brand"><a class="js-scroll-trigger" href="#page-top" data-lang="nav-title">Tourmalet</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#landing" data-lang="nav-home">Home</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#Design" data-lang="nav-design">Design</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#showcase" data-lang="nav-projects">Projects</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#contact" data-lang="nav-contact">Contact</a></li>
+            <li class="sidebar-brand"><a data-lang="nav-title" onclick="onepageTrigger('#pageTopTrigger')">Tourmalet</a></li>
+            <li class="sidebar-nav-item"><a data-lang="nav-design" onclick="onepageTrigger('#pageBrandTrigger')">Branding</a></li>
+            <li class="sidebar-nav-item"><a data-lang="nav-projects" onclick="onepageTrigger('#pageWebTrigger')">Web</a></li>
+            <li class="sidebar-nav-item"><a data-lang="nav-projects" onclick="onepageTrigger('#pageDesignTrigger')">Design</a></li>
+            <li class="sidebar-nav-item"><a data-lang="nav-contact" onclick="onepageTrigger('#pageContactTrigger')">Contact</a></li>
         </ul>
-    </nav>
-    <!-- Header-->
+    </nav><!-- Header-->
     <div class="splash centre-xy" id="splash"><img class="logo" src="img/logo_min.svg">
         <div class="wrap text-center">
-            <div class="lang-select mt-5"><a class="btn-lang mr-2" data-sel="en">English</a>
-                <!--span.m-2 |--><a class="btn-lang" data-sel="fr">Française</a></div><svg class="load-line"><line x1="0" y1="0" x2="100%" y2="0"></line></svg></div>
-    </div>
-    <div class="full-section centre-y" id="landing">
-        <div class="container text-center"><img class="logo mb-5" id="logo" src="img/logo.svg">
-            <!--.btn-group.d-blocka.btn.btn-secondary.js-scroll-trigger(href="#intro" onclick="translatePage('en')") English
-a.btn.btn-secondary.js-scroll-trigger(href="#intro" onclick="translatePage('fr')") Française-->
+            <div class="lang-select mt-5"><a class="btn-lang">Enter</a></div>
+            <!--.lang-select.mt-5a.btn-lang.mr-2(data-sel="en") English
+//span.m-2 |
+a.btn-lang(data-sel="fr") Française--><svg class="load-line">
+                <line x1="0" y1="0" x2="100%" y2="0"></line>
+            </svg>
         </div>
     </div>
-    <div class="full-section content-section centre-xy" id="intro">
-        <div class="text-left" id="div1">
-            <h1 class="intro-1" data-lang="intro-t1">Creators of bespoke brands</h1>
-            <hr class="hr-small tw2" align="left">
-            <p class="intro-1" data-lang="intro-p1">From Olympic athletes to internationally accredited doctors to disruptive business consultants</p>
-            <p class="intro-1" data-lang="intro-p2">Tourmalet Media helps distinguished individuals and brands present themselves as such.</p>
-            <!--a#btn-design.intro-1.btn.mt-3 Design Philosophy--><a class="btn btn-primary intro-1" id="btn-intro" data-lang="intro-b1">Open</a></div>
-        <div class="text-left" id="div2">
-            <h1 class="intro-2" data-lang="intro-t2">Significance</h1>
-            <hr class="hr-small tw3" align="left">
-            <p class="intro-2" data-lang="intro-p3">Tourmalet Media believes that a brand is defined by that which it refuses.</p>
-            <p class="intro-2" data-lang="intro-p4">True to our European roots- we aim to consistently create minimalist aesthetics that communicate unencumbered and purposeful logic.</p><a class="js-scroll-trigger btn btn-primary" href="#design" id="btn-continue" data-lang="intro-b2">continue         </a></div>
-    </div>
-    <!-- Design-->
-    <div class="full-section centre-y of-no" id="design">
-        <div class="container text-center" id="container1">
-            <div class="row">
-                <div class="col-md-4 col-6"><a><img class="mb-5 design-icon row1" src="img/icons/mep.svg" data-desc="Brand development for ME P haute couture photography" data-lang="design-mep"></a></div>
-                <div class="col-md-4 col-6"><a><img class="mb-5 design-icon row1" src="img/icons/hs.svg" data-desc="Project with Olympic Medalist, Henri Schoeman, to develop his personal trademark." data-lang="design-hs"></a></div>
-                <div class="col-md-4 col-6"><a><img class="mb-5 design-icon row1" src="img/icons/im.svg" data-desc="Branding consultation for boutique hotel and polo club, Inyanda Manor" data-lang="design-im"></a></div>
-                <div class="col-md-4 col-6"><a><img class="design-icon row1" src="img/icons/bw.svg" data-desc="Branding project for high profile brittish Olympic champion. Further details may contractually not yet be disclosed." data-lang="design-bw"></a></div>
-                <div class="col-md-4 col-6"><a><img class="design-icon row1" src="img/icons/vl.svg" data-desc="Brand consultation for Vincent Luis and his French brand VLFR." data-lang="design-vl"></a></div>
-                <div class="col-md-4 col-6"><a><img class="design-icon row1" src="img/icons/dogma.svg" data-desc="Dogma corporate image creation as well as web development" data-lang="design-dogma"></a></div>
-            </div>
-        </div>
-        <div class="container centre-xy" id="container2"><a id="btnCloseDesign"><i class="fa fa-2x fa-times"></i></a><img class="elems" id="brand-image" src="img/icons/hs.svg">
-            <div class="vert-spacer elems m-5"></div>
-            <p class="elems text-gold" id="brand-paragraph">This is a short description of the project conducted</p>
-        </div>
-    </div>
-    <!--Showcase-->
-    <section class="centre-y" id="showcase">
-        <div class="container-standard">
-            <div class="cover p-5">
-                <a class="btn btn-halo pull-right" id="btn-expand" data-lang="showcase-button">
-                    <div class="svg-wrapper"><svg height="40" width="250" xmlns="http://www.w3.org/2000/svg"><rect class="shape theme-light" height="40" width="250"></rect></svg>
-                        <div class="text theme-light">Projects</div>
-                    </div>
-                </a>
-            </div>
-            <div class="carousel slide h-100" id="carousel-showcase" data-ride="carousel" data-interval="false">
-                <!-- Indicators-->
-                <ul class="carousel-indicators">
-                    <li class="active" data-target="#carousel-showcase" data-slide-to="0"></li>
-                    <li data-target="#carousel-showcase" data-slide-to="1"></li>
-                    <li data-target="#carousel-showcase" data-slide-to="2"></li>
-                    <li data-target="#carousel-showcase" data-slide-to="3"></li>
-                    <li data-target="#carousel-showcase" data-slide-to="4"></li>
-                    <li data-target="#carousel-showcase" data-slide-to="5"></li>
-                </ul>
-                <!-- The slideshow-->
-                <div class="carousel-inner h-100">
-                    <div class="carousel-item active" id="item1">
-                        <h4 class="w-50" data-lang="showcase-item1">Featured on the custom bike of Olympic Medalist, Henri Schoeman</h4>
-                    </div>
-                    <div class="carousel-item" id="item2"></div>
-                    <div class="carousel-item" id="item3">
-                        <h4 class="w-50" data-lang="showcase-item3">Brand identity and design for Red Bull ambassador, Richard Murray</h4>
-                    </div>
-                    <div class="carousel-item" id="item4">
-                        <h4 class="w-50"> </h4>
-                    </div>
-                    <div class="carousel-item" id="item5">
-                        <h4 class="w-50" data-lang="showcase-item5">Brand identity and design for The Nunez Hurley Academy</h4>
-                    </div>
-                    <div class="carousel-item" id="item6">
-                        <h4 class="w-50"></h4>
-                    </div>
-                    <div class="carousel-item" id="item7">
-                        <h4 class="w-50" data-lang="showcase-item7">Web and design projects for 7 x triathlon world champion, Conrad Stoltz</h4>
-                    </div>
-                    <div class="carousel-item" id="item8"></div>
-                    <!--#item9.carousel-item.centre-y.row
-    .col-md-4.text-center
-        a
-            img.web-icon(src="img/previews/mca.png")
-    .col-md-4.text-center
-        a
-            img.web-icon(src="img/previews/mca.png")
-    .col-md-4.text-center
-        a
-            img.web-icon(src="img/previews/mca.png")-->
+    <div id="view">
+        <div id="frame">
+            <div class="full-section centre-y op-section" id="landing">
+                <div class="container text-center"><img class="logo mb-5" id="logo" src="img/logo.svg"></div>
+            </div><!-- Branding-->
+            <div class="full-section centre-xy op-section" id="brand-text">
+                <div class="text-wrapper">
+                    <h2 class="tw1"> <span class="tw4" data-lang="brand-t1">creators </span><span data-lang="brand-t2">of bespoke brands</span></h2>
+                    <hr class="hr-small tw2" align="left">
+                    <p class="tw3" data-lang="brand-p1">From Olympic athletes to internationally accredited doctors to disruptive business consultants</p>
+                    <p class="mb-4 tw3" data-lang="brand-p2">Tourmalet Media helps distinguished individuals and brands present themselves as such.</p>
+                    <!--a.scrolly.more-link.tw3i.fa.fa-angle-right
+span more-->
                 </div>
-                <!-- Left and right controls--><a class="carousel-control-prev" href="#carousel-showcase" data-slide="prev"><span class="carousel-control-prev-icon"></span></a><a class="carousel-control-next" href="#carousel-showcase" data-slide="next"><span class="carousel-control-next-icon"></span></a></div>
-        </div>
-    </section>
-    <!--Contact-->
-    <section class="centre-y" id="contact">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4 mb-5"><img class="logo" src="img/logo_min.svg"></div>
-                <div class="col-md-4 mb-5"><a href="mailto:dehanlouw@icloud.com"><i class="icon icon-envelope"></i></a></div>
-                <div class="col-md-4 mb-5"><a class="js-scroll-trigger" href="#page-top"><i class="icon icon-arrow-up">   </i></a></div>
             </div>
+            <div class="full-section centre-y of-no op-section" id="brand-content">
+                <div class="container text-center" id="container-all">
+                    <div class="row">
+                        <div class="col-md-4 col-6"><a><img class="mb-5 design-icon tw1" src="img/icons/mep.svg" data-desc="Brand development for ME P haute couture photography" data-lang="brand-mep"></a></div>
+                        <div class="col-md-4 col-6"><a><img class="mb-5 design-icon tw1" src="img/icons/hs.svg" data-desc="Project with Olympic Medalist, Henri Schoeman, to develop his personal trademark." data-lang="brand-hs"></a></div>
+                        <div class="col-md-4 col-6"><a><img class="mb-5 design-icon tw1" src="img/icons/im.svg" data-desc="Branding consultation for boutique hotel and polo club, Inyanda Manor" data-lang="brand-im"></a></div>
+                        <div class="col-md-4 col-6"><a><img class="design-icon tw1" src="img/icons/bw.svg" data-desc="Branding project for high profile brittish Olympic champion. Further details may contractually not yet be disclosed." data-lang="brand-bw"></a></div>
+                        <div class="col-md-4 col-6"><a><img class="design-icon tw1" src="img/icons/vl.svg" data-desc="Brand consultation for Vincent Luis and his French brand VLFR." data-lang="brand-vl"></a></div>
+                        <div class="col-md-4 col-6"><a><img class="design-icon tw1" src="img/icons/dogma.svg" data-desc="Dogma corporate image creation as well as web development" data-lang="design-dogma"></a></div>
+                    </div>
+                </div>
+                <div class="container centre-xy" id="container-one"><a id="btnCloseDesign"><i class="fa fa-2x fa-times"></i></a><img class="elems" id="brand-image" src="img/icons/hs.svg">
+                    <div class="vert-spacer elems m-5"></div>
+                    <p class="elems text-gold" id="brand-paragraph">This is a short description of the project conducted</p>
+                </div>
+            </div>
+            <!--Web-->
+            <div class="full-section centre-xy op-section" id="web-text">
+                <div class="text-wrapper">
+                    <h2 class="tw1"><span class="tw4" data-lang="web-t1">Developers </span><span data-lang="web-t2">creating modern web experiences</span></h2>
+                    <hr class="hr-small tw2" align="left">
+                    <p class="tw3" data-lang="web-p1">Forward thinking aesthtics built on future proof platforms</p>
+                    <p class="tw3" data-lang="web-p2">Tourmalet Media implements the latest web technologies to create mobile first experiences with optimal SEO performance</p>
+                    <p class="tw3 text-muted">HTML5 | Javascript | Jquery | SASS | Knockout | PHP | Docker</p>
+                    <!--a.js-scroll-trigger.more-link.tw3(href="#brand-content")i.fa.fa-angle-right
+span more        -->
+                </div>
+            </div>
+            <div class="op-section centre-xy" id="web-content">
+                <div class="container-standard centre-xy">
+                    <div class="carousel slide" id="carousel-web" data-ride="carousel" data-interval="false">
+                        <!-- Indicators-->
+                        <ul class="carousel-indicators">
+                            <li class="active" data-target="#carousel-erb" data-slide-to="0"></li>
+                            <li data-target="#carousel-web" data-slide-to="1"></li>
+                            <li data-target="#carousel-web" data-slide-to="2"></li>
+                            <li data-target="#carousel-web" data-slide-to="3"></li>
+                            <li data-target="#carousel-web" data-slide-to="4"></li>
+                            <li data-target="#carousel-web" data-slide-to="5"></li>
+                        </ul><!-- The slideshow-->
+                        <div class="carousel-inner">
+                            <!--a.carou-controller(href='#carousel-web', data-slide='next')i.icon-arrow-right -->
+                            <div class="carousel-item active container">
+                                <div class="row text-center">
+                                    <div class="col-md-6"><img class="web-preview" src="img/cavemancafe.png"></div>
+                                    <div class="col-md-6 text-right">
+                                        <h2>Caveman Cafe</h2>
+                                        <h4>Web project for Conrad Stoltz</h4><br>
+                                        <p>High profile project for the collaboration of 7 x Triathlon World Champion and Specialized Stellenbosch.</p><a class="btn btn-primary" href="#carousel-web" data-slide="next">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row text-center">
+                                    <div class="col-md-6"><img class="web-preview" src="img/digivate.png"></div>
+                                    <div class="col-md-6 text-right">
+                                        <h2>Digivate</h2>
+                                        <h4>Web partner for Digivate business sollutions</h4><br>
+                                        <p>Complete development for an official SAP partner who placed a high premium on a professional online presence</p><a class="btn btn-primary" href="#carousel-web" data-slide="next">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row text-center">
+                                    <div class="col-md-6"><img class="web-preview" src="img/mca.png"></div>
+                                    <div class="col-md-6 text-right">
+                                        <h2>Marizaan Carstens</h2>
+                                        <h4>Web development and Search Engine Optimization</h4><br>
+                                        <p>The project lead to the business reaching Google's front search page in the highly competitive space of health and medicine</p><a class="btn btn-primary">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row text-center">
+                                    <div class="col-md-6"><img class="web-preview" src="img/helderberg.png"></div>
+                                    <div class="col-md-6 text-right">
+                                        <h2>Helderberg Pain Clinic</h2>
+                                        <h4>New web development</h4><br>
+                                        <p>Tasked with creating a website for the practice of the internationally renowned physicians at the Helderberg Pain Clinic</p><a class="btn btn-primary">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- Left and right controls--><a class="carousel-control-prev" href="#carousel-web" data-slide="prev"><span class="carousel-control-prev-icon"></span></a><a class="carousel-control-next" href="#carousel-web" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+                    </div>
+                </div>
+            </div>
+            <!--Design-->
+            <div class="full-section centre-xy op-section" id="design-text">
+                <div class="text-wrapper">
+                    <h2 class="tw1" data-lang="intro-t2"><span class="tw4">Designers </span><span>inspired by reduction</span></h2>
+                    <hr class="hr-small tw2" align="left">
+                    <p class="tw3" data-lang="intro-p3">Tourmalet Media believes that a brand is defined by that which it refuses.</p>
+                    <p class="tw3" data-lang="intro-p4">True to our European roots- we aim to consistently create minimalist aesthetics that communicate unencumbered purpose</p>
+                    <!--a.js-scroll-trigger.more-link.tw3(href="#brand-content")i.fa.fa-angle-right
+span more        -->
+                </div>
+            </div>
+            <div class="centre-y op-section" id="design-content">
+                <div class="container-standard">
+                    <div class="design-cover p-5"><a class="btn btn-halo pull-right" id="btn-expand" data-lang="showcase-button">
+                            <div class="svg-wrapper"><svg height="40" width="250" xmlns="http://www.w3.org/2000/svg">
+                                    <rect class="shape theme-light" height="40" width="250"></rect>
+                                </svg>
+                                <div class="text theme-light">Projects</div>
+                            </div>
+                        </a></div>
+                    <div class="carousel slide h-100" id="carousel-showcase" data-ride="carousel" data-interval="false">
+                        <!-- Indicators-->
+                        <ul class="carousel-indicators">
+                            <li class="active" data-target="#carousel-showcase" data-slide-to="0"></li>
+                            <li data-target="#carousel-showcase" data-slide-to="1"></li>
+                            <li data-target="#carousel-showcase" data-slide-to="2"></li>
+                            <li data-target="#carousel-showcase" data-slide-to="3"></li>
+                            <li data-target="#carousel-showcase" data-slide-to="4"></li>
+                            <li data-target="#carousel-showcase" data-slide-to="5"></li>
+                        </ul><!-- The slideshow-->
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active" id="item1">
+                                <h4 class="w-50" data-lang="showcase-item1">Featured on the custom bike of Olympic Medalist, Henri Schoeman</h4>
+                            </div>
+                            <div class="carousel-item" id="item2"></div>
+                            <div class="carousel-item" id="item3">
+                                <h4 class="w-50" data-lang="showcase-item3">Brand identity and design for Red Bull ambassador, Richard Murray</h4>
+                            </div>
+                            <div class="carousel-item" id="item4">
+                                <h4 class="w-50"> </h4>
+                            </div>
+                            <div class="carousel-item" id="item5">
+                                <h4 class="w-50" data-lang="showcase-item5">Brand identity and design for The Nunez Hurley Academy</h4>
+                            </div>
+                            <div class="carousel-item" id="item6">
+                                <h4 class="w-50"></h4>
+                            </div>
+                            <div class="carousel-item" id="item7">
+                                <h4 class="w-50" data-lang="showcase-item7">Web and design projects for 7 x triathlon world champion, Conrad Stoltz</h4>
+                            </div>
+                            <div class="carousel-item" id="item8"></div>
+                        </div><!-- Left and right controls--><a class="carousel-control-prev" href="#carousel-showcase" data-slide="prev"><span class="carousel-control-prev-icon"></span></a><a class="carousel-control-next" href="#carousel-showcase" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+                    </div>
+                </div>
+            </div>
+            <!--Contact-->
+            <section class="centre-y op-section" id="contact">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-4 mb-5"><img class="logo tw1" src="img/logo_min.svg"></div>
+                        <div class="col-md-4 mb-5"><a href="mailto:dehanlouw@icloud.com"><i class="icon icon-envelope tw1"></i></a></div>
+                        <div class="col-md-4 mb-5"><a onclick="onepageTrigger('#pageTopTrigger')"><i class="icon icon-arrow-up tw1"> </i></a></div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-    <!-- Footer-->
-    <footer class="footer text-center">
-        <div class="container-full"><a class="text-muted small mb-0" href="mailto:dehanlouw@icloud.com" data-lang="copyright">Copyright © Tourmalet Media 2018</a></div>
-    </footer>
-    <!-- Scroll to Top Button--><a class="scroll-to-top rounded js-scroll-trigger" href="#page-top"><i class="fa fa-angle-up"></i></a>
-    <!-- Bootstrap core JavaScript-->
+    </div>
+    <div id="radioWrap">
+        <ul id="radio">
+            <li class="tw1" id="pageTopTrigger"></li>
+            <li class="tw1" id="pageBrandTrigger"></li>
+            <li class="tw1"></li>
+            <li class="tw1" id="pageWebTrigger"></li>
+            <li class="tw1"></li>
+            <li class="tw1" id="pageDesignTrigger"></li>
+            <li class="tw1"></li>
+            <li class="tw1" id="pageContactTrigger"></li>
+        </ul><span class="tw1" id="radioOn">
+            <!-- Footer-->
+            <!--footer.footer.text-center.container-full
+    a.text-muted.small.mb-0(href="mailto:dehanlouw@icloud.com", data-lang="copyright") Copyright © Tourmalet Media 2018-->
+            <!-- Scroll to Top Button--><a class="scroll-to-top rounded js-scroll-trigger" href="#page-top"><i class="fa fa-angle-up"></i></a></span>
+    </div><!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/onepage/onepage.js"></script>
     <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Plugin JavaScript-->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script><!-- Plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="vendor/gsap/TweenMax.min.js"></script>
     <script src="vendor/scrollmagic/ScrollMagic.min.js"></script>
     <script src="vendor/scrollmagic/animation.gsap.min.js"></script>
-    <script src="vendor/scrollmagic/debug.addIndicators.min.js"></script>
-    <!-- Custom scripts for this template-->
+    <script src="vendor/scrollmagic/debug.addIndicators.min.js"></script><!-- Custom scripts for this template-->
     <script src="js/mza.min.js"></script>
 </body>
 

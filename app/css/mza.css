@@ -9,7 +9,9 @@ html {
   height: 100%;
   position: relative;
   z-index: 0;
-  overflow: visible; }
+  overflow-y: hidden;
+  margin: 0;
+  padding: 0; }
 
 body {
   font-family: Montserrat, sans-serif; }
@@ -102,58 +104,13 @@ h6 {
     display: inline;
     height: 100%; }
 
-.double-page-section {
-  position: relative;
-  width: 100%;
+.of-no {
   overflow: hidden; }
 
-.double-page-parent {
-  position: relative;
-  width: 200%;
-  left: 0;
-  transition: all 0.4s ease-out; }
-
-.double-page-child {
-  position: relative;
-  width: 50%;
-  top: 0px; }
-
-.show-right-half {
-  left: -100% !important; }
-
-.db-left {
-  float: left; }
-
-.db-right {
-  margin-left: 50%;
-  height: 100vh; }
-
-@media (min-width: 768px) {
-  .double-page-section {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    overflow: hidden; }
-  .double-page-parent {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    transition: all 0.4s ease-out; }
-  .double-page-child {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px; }
-  .show-right-half {
-    left: -100% !important; }
-  .db-left {
-    left: 0%; }
-  .db-right {
-    left: 100%;
-    margin-left: 0%; }
-  .of-no {
-    overflow: hidden; } }
+a {
+  cursor: pointer; }
+  a:hover {
+    color: #806600 !important; }
 
 .masthead {
   min-height: 30rem;
@@ -257,78 +214,12 @@ h6 {
   .menu-toggle:hover {
     background: #343a40; }
 
-#web {
-  position: relative;
-  min-height: 100%;
-  /* entire container, keeps perspective */
-  /* flip the pane when hovered */
-  /* flip speed goes here */
-  /* hide back of pane during swap */
-  /* front pane, placed above back */
-  /* back, initially hidden pane */ }
-  #web .web-icon {
-    height: 150px; }
-  #web .flip-container {
-    perspective: 1000px;
-    margin-left: auto;
-    margin-right: auto; }
-  #web .flip-container.flip .flipper, #web .flip-container.hover .flipper {
-    transform: rotateY(180deg); }
-  #web .flip-container, #web .front, #web .back {
-    width: 150px;
-    height: 150px; }
-  #web .flipper {
-    transition: 0.3s ease-in;
-    transform-style: preserve-3d;
-    position: relative; }
-  #web .front, #web .back {
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0; }
-  #web .front {
-    z-index: 2;
-    /* for firefox 31 */
-    transform: rotateY(0deg); }
-  #web .back {
-    transform: rotateY(180deg); }
-
-#design {
-  position: relative; }
-  #design .design-icon {
-    height: 5rem;
-    max-width: 10rem;
-    font-size: 2.25rem;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    margin-bottom: 50px;
-    margin-top: 50px; }
-  #design #container2 {
-    flex-direction: column;
-    display: none; }
-    @media (min-width: 768px) {
-      #design #container2 {
-        flex-direction: row; } }
-  #design #imgWrapper {
-    position: relative; }
-  #design #btnCloseDesign {
-    position: absolute;
-    left: 50px;
-    top: 50px; }
-  #design #brand-image {
-    height: 10rem;
-    max-width: 20rem; }
-  #design #brand-paragraph {
-    max-width: 30rem; }
-
 #landing {
   background-image: url("../img/loften.jpg");
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  opacity: 0; }
+  background-attachment: fixed; }
   #landing .logo {
     width: 250px; }
   #landing #path {
@@ -348,157 +239,12 @@ h6 {
     position: absolute;
     z-index: -1; }
 
-#showcase {
-  color: silver;
-  height: 100%; }
-  #showcase .carousel #item1 {
-    background-image: url(../img/projects/hs_sm_1.png); }
-  #showcase .carousel #item2 {
-    background-image: url(../img/projects/hs_sm_2.png); }
-  #showcase .carousel #item3 {
-    background-image: url(../img/projects/rd_sm_1.png); }
-  #showcase .carousel #item4 {
-    background-image: url(../img/projects/rd_sm_2.png); }
-  #showcase .carousel #item5 {
-    background-image: url(../img/projects/nh_sm_1.png); }
-  #showcase .carousel #item6 {
-    background-image: url(../img/projects/nh_sm_2.png); }
-  #showcase .carousel #item7 {
-    background-image: url(../img/projects/cz_sm_1.png); }
-  #showcase .carousel #item8 {
-    background-image: url(../img/projects/cz_sm_2.png); }
-  #showcase .cover {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: 1000;
-    background-image: url(../img/projects/hs_cv_sm.png);
-    background-position: center;
-    background-size: contain;
-    transition: all 0.5s ease-out;
-    filter: opacity(1); }
-  @media (min-width: 768px) {
-    #showcase .carousel #item1 {
-      background-image: url(../img/projects/hs_lg_1.png); }
-    #showcase .carousel #item2 {
-      background-image: url(../img/projects/hs_lg_2.png); }
-    #showcase .carousel #item3 {
-      background-image: url(../img/projects/rd_lg_1.png); }
-    #showcase .carousel #item4 {
-      background-image: url(../img/projects/rd_lg_2.png); }
-    #showcase .carousel #item5 {
-      background-image: url(../img/projects/nh_lg_1.png); }
-    #showcase .carousel #item6 {
-      background-image: url(../img/projects/nh_lg_2.png); }
-    #showcase .carousel #item7 {
-      background-image: url(../img/projects/cz_lg_1.png); }
-    #showcase .carousel #item8 {
-      background-image: url(../img/projects/cz_lg_2.png); }
-    #showcase .cover {
-      background-image: url(../img/projects/hs_cv_lg.png); } }
-  #showcase .carousel-item {
-    height: 100%;
-    padding: 20px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat; }
-  #showcase .carousel-item:after {
-    content: "";
-    background: url(../img/subtle-dots.png) repeat;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1; }
-  #showcase .hide {
-    filter: opacity(0); }
-  #showcase .web-icon {
-    height: 100px; }
-
 #contact {
   min-height: 50%; }
   #contact .icon {
     font-size: 50px; }
   #contact .logo {
     height: 50px; }
-
-.portfolio-item {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  max-width: 530px;
-  margin: auto auto 1rem; }
-  .portfolio-item .caption {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(33, 37, 41, 0.2);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    z-index: 1; }
-    .portfolio-item .caption .caption-content {
-      color: #fff;
-      margin: auto 2rem 2rem; }
-      .portfolio-item .caption .caption-content h2 {
-        font-size: 0.8rem;
-        text-transform: uppercase; }
-      .portfolio-item .caption .caption-content p {
-        font-weight: 300;
-        font-size: 1.2rem; }
-  @media (min-width: 992px) {
-    .portfolio-item {
-      max-width: none;
-      margin: 0; }
-      .portfolio-item .caption {
-        -webkit-transition: -webkit-clip-path 0.25s ease-out, background-color 0.7s;
-        -webkit-clip-path: inset(0px);
-        clip-path: inset(0px); }
-        .portfolio-item .caption .caption-content {
-          transition: opacity 0.25s;
-          margin-left: 5rem;
-          margin-right: 5rem;
-          margin-bottom: 5rem; }
-      .portfolio-item img {
-        -webkit-transition: -webkit-clip-path 0.25s ease-out;
-        -webkit-clip-path: inset(-1px);
-        clip-path: inset(-1px); }
-      .portfolio-item:hover img {
-        -webkit-clip-path: inset(2rem);
-        clip-path: inset(2rem); }
-      .portfolio-item:hover .caption {
-        background-color: rgba(33, 37, 41, 0.9);
-        -webkit-clip-path: inset(2rem);
-        clip-path: inset(2rem); } }
-
-#CI {
-  color: silver;
-  height: 100%; }
-  #CI .carousel #item1 {
-    background-image: url(../img/projects/nunezhurley.png); }
-  #CI .carousel #item2 {
-    background-image: url(../img/projects/cavemancafe.png); }
-  #CI .carousel #item3 {
-    background-image: url(../img/projects/wian.png); }
-  #CI .carousel-item {
-    background-position: center;
-    background-repeat: no-repeat; }
-  #CI .cover {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: 1000;
-    background-image: url(../img/henri_grey.jpg);
-    background-position: center;
-    transition: all 0.5s ease-out;
-    filter: opacity(1); }
-  #CI .hide {
-    filter: opacity(0); }
 
 footer.footer {
   padding-bottom: 2rem; }
@@ -519,11 +265,11 @@ a {
 
 .btn-primary {
   background-color: #212529 !important;
-  border-color: silver !important;
-  color: silver !important; }
+  border-color: gray !important;
+  color: gray !important; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    background-color: #0a0c0d !important;
-    border-color: #0a0c0d !important; }
+    background-color: #e6e6e6 !important;
+    border-color: transparent !important; }
 
 .btn-secondary {
   background-color: silver !important;
@@ -567,6 +313,9 @@ label {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 20px; }
+
+.btn {
+  background-color: transparent !important; }
 
 h4 {
   font-family: Open Sans, sans-serif;
@@ -635,8 +384,6 @@ a {
 
 .btn-halo .text {
   color: black;
-  font-size: 18px;
-  letter-spacing: 8px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
@@ -674,9 +421,60 @@ a {
       width: 1px; } }
 
 .hr-small {
-  width: 100px;
+  width: 50px;
   border-top: 2px solid black;
-  border-color: #C5B358; }
+  border-color: black; }
+
+.text-wrapper {
+  max-width: 300px;
+  text-align: left; }
+  @media (min-width: 768px) {
+    .text-wrapper {
+      max-width: 500px; } }
+
+#radioWrap {
+  width: 20px;
+  height: 180px;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  margin-top: -90px; }
+  @media (max-width: 768px) {
+    #radioWrap {
+      display: none; } }
+
+#radio {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0; }
+
+#radio li {
+  width: 15px;
+  height: 15px;
+  background-color: grey;
+  text-indent: -10000px;
+  border-radius: 50%;
+  margin-top: 12px;
+  cursor: pointer; }
+
+#radio li:first-child {
+  margin-top: 0; }
+
+#radioOn {
+  width: 15px;
+  height: 15px;
+  margin-bottom: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: grey;
+  border-radius: 50%; }
+
+.more-link {
+  color: goldenrod !important; }
+  .more-link .fa {
+    margin-right: 5px; }
 
 .splash {
   background-color: white;
@@ -719,23 +517,136 @@ a {
     stroke: grey; } }
   .splash .hide {
     background-color: none !important; }
+  .splash .btn-lang:hover {
+    color: #806600; }
 
-#intro p {
-  max-width: 500px; }
+#brand-content {
+  position: relative; }
+  #brand-content .design-icon {
+    height: 5rem;
+    max-width: 10rem;
+    font-size: 2.25rem;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    opacity: 0.7; }
+  #brand-content #container-one {
+    flex-direction: column;
+    display: none; }
+    @media (min-width: 768px) {
+      #brand-content #container-one {
+        flex-direction: row; } }
+  #brand-content #imgWrapper {
+    position: relative; }
+  #brand-content #btnCloseDesign {
+    position: absolute;
+    left: 50px;
+    top: 50px; }
+  #brand-content #brand-image {
+    height: 10rem;
+    max-width: 20rem; }
+  #brand-content #brand-paragraph {
+    max-width: 30rem; }
 
-#intro .intro-2 {
-  opacity: 1; }
+#web-content {
+  color: silver;
+  height: 100%; }
+  #web-content h2, #web-content p {
+    color: black; }
+  #web-content .carousel-item {
+    height: 100%;
+    padding: 30px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; }
+  #web-content .carousel {
+    margin: 0 30px 0 30px; }
+  #web-content .carousel-indicators li {
+    color: black; }
+  #web-content .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+    left: -20px !important;
+    position: absolute; }
+  #web-content .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+    right: -20px !important;
+    position: absolute; }
+  #web-content .hide {
+    filter: opacity(0); }
+  #web-content .web-preview {
+    width: 200px; }
+    @media (min-width: 768px) {
+      #web-content .web-preview {
+        width: 400px; } }
 
-#intro .intro-3 {
-  opacity: 1;
-  color: #806600; }
-
-#intro #div2 {
-  display: none; }
-
-#intro .btn {
-  background: none !important;
-  box-shadow: none; }
-
-#intro h1 {
-  margin-bottom: 20px; }
+#design-content {
+  color: silver;
+  height: 100%; }
+  #design-content .carousel #item1 {
+    background-image: url(../img/projects/hs_sm_1.png); }
+  #design-content .carousel #item2 {
+    background-image: url(../img/projects/hs_sm_2.png); }
+  #design-content .carousel #item3 {
+    background-image: url(../img/projects/rd_sm_1.png); }
+  #design-content .carousel #item4 {
+    background-image: url(../img/projects/rd_sm_2.png); }
+  #design-content .carousel #item5 {
+    background-image: url(../img/projects/nh_sm_1.png); }
+  #design-content .carousel #item6 {
+    background-image: url(../img/projects/nh_sm_2.png); }
+  #design-content .carousel #item7 {
+    background-image: url(../img/projects/cz_sm_1.png); }
+  #design-content .carousel #item8 {
+    background-image: url(../img/projects/cz_sm_2.png); }
+  #design-content .design-cover {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background-image: url(../img/projects/hs_cv_sm.png);
+    background-position: center;
+    background-size: contain;
+    transition: all 0.5s ease-out;
+    filter: opacity(1); }
+  @media (min-width: 768px) {
+    #design-content .carousel #item1 {
+      background-image: url(../img/projects/hs_lg_1.png); }
+    #design-content .carousel #item2 {
+      background-image: url(../img/projects/hs_lg_2.png); }
+    #design-content .carousel #item3 {
+      background-image: url(../img/projects/rd_lg_1.png); }
+    #design-content .carousel #item4 {
+      background-image: url(../img/projects/rd_lg_2.png); }
+    #design-content .carousel #item5 {
+      background-image: url(../img/projects/nh_lg_1.png); }
+    #design-content .carousel #item6 {
+      background-image: url(../img/projects/nh_lg_2.png); }
+    #design-content .carousel #item7 {
+      background-image: url(../img/projects/cz_lg_1.png); }
+    #design-content .carousel #item8 {
+      background-image: url(../img/projects/cz_lg_2.png); }
+    #design-content .design-cover {
+      background-image: url(../img/projects/hs_cv_lg.png); } }
+  #design-content .carousel-item {
+    height: 100%;
+    padding: 20px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; }
+  #design-content .carousel-item:after {
+    content: "";
+    background: url(../img/subtle-dots.png) repeat;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; }
+  #design-content .hide {
+    filter: opacity(0); }
+  #design-content .web-icon {
+    height: 100px; }
