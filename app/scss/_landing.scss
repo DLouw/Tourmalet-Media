@@ -1,7 +1,6 @@
 // Landing section
-// Landing section
 #landing {
-    background-image: url("../img/loften.jpg");
+    background-image: url("../img/bg.jpg");
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,8 +9,6 @@
     
     .logo{
         width: 250px;
-        //Will later be set to 1 in js
-        //opacity: 0.3;
     }
     
     #path{

@@ -31,10 +31,9 @@
     }
     
     line{
-        stroke-width: 4px;
+        stroke-width: 3px;
         stroke: grey;
         stroke-dasharray: 100vw;
-        //stroke-dashoffset: 0vw;
         animation: 2s load ease-in infinite;
     }
     
@@ -44,12 +43,12 @@
       }
     30% {
         stroke-width: 7px;
-        stroke: #B8AA99;
+        stroke: #0082FF;
       }
       600% {
         //stroke-dashoffset: 0;
         stroke-width: 5px;
-        stroke: #B8AA99;
+        stroke: #0082FF;
       }
       100% {
         //stroke-dashoffset: 0;

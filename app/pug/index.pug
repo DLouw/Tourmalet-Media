@@ -17,7 +17,7 @@ html(lang="en")
         //Simple Line Icons
         link(href="vendor/simple-line-icons/css/simple-line-icons.css", rel="stylesheet")
         // Custom CSS
-        link(href="css/mza.min.css", rel="stylesheet")
+        link(href="css/stylesheet.min.css", rel="stylesheet")
         //Favicon
         link(rel="icon", href="img/favicon.png")
     body#page-top(onload="splash(0)")
@@ -27,7 +27,7 @@ html(lang="en")
         nav#sidebar-wrapper
             ul.sidebar-nav
                 li.sidebar-brand
-                    a(data-lang="nav-title", onclick="$('.main').moveTo(1)") Tourmalet
+                    a(data-lang="nav-title", onclick="$('.main').moveTo(1)") Synapse
                 li.sidebar-nav-item
                     a(data-lang="nav-design", onclick="$('.main').moveTo(2)") Branding
                 li.sidebar-nav-item
@@ -38,7 +38,7 @@ html(lang="en")
                     a(data-lang="nav-contact", onclick="$('.main').moveTo(8)") Contact
         // Header
         #splash.splash.centre-xy
-            img.logo(src="img/logo_min.svg")
+            img.logo(src="img/logo_icon.svg")
             .wrap.text-center
                 .lang-select.mt-5
                     a.btn-lang Enter
@@ -54,7 +54,7 @@ html(lang="en")
         #main
           #landing.full-section.centre-y.op-section
               div.container.text-center
-                  img#logo.logo.mb-5(src="img/logo.svg")
+                  img#logo.logo.mb-5(src="img/logo_light.svg")
           // Branding
           #brand-text.full-section.centre-xy.op-section
               .text-wrapper
@@ -63,7 +63,7 @@ html(lang="en")
                       span(data-lang="brand-t2") of bespoke digital solutions
                   hr.hr-small.tw2(align="left")
                   p.tw3(data-lang="brand-p1") From Olympic athletes to internationally accredited doctors to disruptive business consultants
-                  p.mb-4.tw3(data-lang="brand-p2") Tourmalet Media helps distinguished individuals and brands present themselves as such.
+                  p.mb-4.tw3(data-lang="brand-p2") Synapse specalizes in helping distinguisehd businesses flourish in the digital era. 
                   //a.scrolly.more-link.tw3
                       i.fa.fa-angle-right
                       span more
@@ -72,22 +72,22 @@ html(lang="en")
                   .row
                       .col-md-4.col-6
                           a
-                              img.mb-5.design-icon.tw1(src="img/icons/mep.svg", data-desc="Brand development for ME P haute couture photography",data-lang="brand-mep")
+                              img.mb-5.brand-icon.tw1(src="img/icons/mep.svg", data-desc="Brand development for ME P haute couture photography",data-lang="brand-mep")
                       .col-md-4.col-6
                           a
-                              img.mb-5.design-icon.tw1(src="img/icons/hs.svg", data-desc="Project with Olympic Medalist, Henri Schoeman, to develop his personal trademark.",data-lang="brand-hs")
+                              img.mb-5.brand-icon.tw1(src="img/icons/hs.svg", data-desc="Project with Olympic Medalist, Henri Schoeman, to develop his personal trademark.",data-lang="brand-hs")
                       .col-md-4.col-6
                           a
-                              img.mb-5.design-icon.tw1(src="img/icons/im.svg", data-desc="Branding consultation for boutique hotel and polo club, Inyanda Manor",data-lang="brand-im")
+                              img.mb-5.brand-icon.tw1(src="img/icons/im.svg", data-desc="Branding consultation for boutique hotel and polo club, Inyanda Manor",data-lang="brand-im")
                       .col-md-4.col-6
                           a
-                              img.design-icon.tw1(src="img/icons/bw.svg", data-desc="Branding project for high profile brittish Olympic champion. Further details may contractually not yet be disclosed.",data-lang="brand-bw")
+                              img.brand-icon.tw1(src="img/icons/bw.svg", data-desc="Branding project for high profile brittish Olympic champion. Further details may contractually not yet be disclosed.",data-lang="brand-bw")
                       .col-md-4.col-6
                           a
-                              img.design-icon.tw1(src="img/icons/vl.svg", data-desc="Brand consultation for Vincent Luis and his French brand VLFR.",data-lang="brand-vl")
+                              img.brand-icon.tw1(src="img/icons/vl.svg", data-desc="Brand consultation for Vincent Luis and his French brand VLFR.",data-lang="brand-vl")
                       .col-md-4.col-6
                           a
-                              img.design-icon.tw1(src="img/icons/dogma.svg", data-desc="Dogma corporate image creation as well as web development",data-lang="design-dogma")
+                              img.brand-icon.tw1(src="img/icons/dogma.svg", data-desc="Dogma corporate image creation as well as web development",data-lang="design-dogma")
               .container#container-one.centre-xy
                   a#btnCloseDesign
                           i.fa.fa-2x.fa-times
@@ -293,5 +293,5 @@ html(lang="en")
         script(src="vendor/scrollmagic/animation.gsap.min.js")
         script(src="vendor/scrollmagic/debug.addIndicators.min.js")
         // Custom scripts for this template
-        script(src="js/mza.min.js")
+        script(src="js/thescript.min.js")
 

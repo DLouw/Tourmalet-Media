@@ -21,7 +21,7 @@ var banner = ['/*!\n',
 
 // Compiles SCSS files from /scss into /css
 gulp.task('sass', function() {
-  return gulp.src('app/scss/mza.scss')
+  return gulp.src('app/scss/stylesheet.scss')
     .pipe(sass())
     .pipe(header(banner, {
       pkg: pkg
@@ -34,7 +34,7 @@ gulp.task('sass', function() {
 
 // Minify compiled CSS
 gulp.task('minify-css', ['sass'], function() {
-  return gulp.src('app/css/mza.css')
+  return gulp.src('app/css/stylesheet.css')
     .pipe(cleanCSS({
       compatibility: 'ie8'
     }))
