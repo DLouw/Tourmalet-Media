@@ -128,6 +128,10 @@ gulp.task('copy', function() {
     gulp.src(['app/vendor/OnePage/onepage.js'])
     .pipe(gulp.dest('dist/vendor/onepage'))
     
+  gulp.src(['app/vendor/onepage-scroll/jquery.onepage-scroll.min.js',
+            'app/vendor/onepage-scroll/onepage-scroll.css'])
+    .pipe(gulp.dest('dist/vendor/onepage-scroll'))
+  
   gulp.src(['serverside/*.php'])
     .pipe(gulp.dest('dist/serverside/'))
 });

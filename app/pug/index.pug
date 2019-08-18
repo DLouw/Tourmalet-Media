@@ -8,6 +8,7 @@ html(lang="en")
         title Tourmalet Media
         // Bootstrap Core CSS
         link(href="vendor/bootstrap/css/bootstrap.min.css", rel="stylesheet")
+        link(href="vendor/onepage-scroll/onepage-scroll.css", rel="stylesheet")
         // Custom Fonts
         link(href="vendor/font-awesome/css/font-awesome.min.css", rel="stylesheet", type="text/css")
         link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic", rel="stylesheet", type="text/css")
@@ -26,15 +27,15 @@ html(lang="en")
         nav#sidebar-wrapper
             ul.sidebar-nav
                 li.sidebar-brand
-                    a(data-lang="nav-title", onclick="onepageTrigger('#pageTopTrigger')") Tourmalet
+                    a(data-lang="nav-title", onclick="$('.main').moveTo(1)") Tourmalet
                 li.sidebar-nav-item
-                    a(data-lang="nav-design", onclick="onepageTrigger('#pageBrandTrigger')") Branding
+                    a(data-lang="nav-design", onclick="$('.main').moveTo(2)") Branding
                 li.sidebar-nav-item
-                    a(data-lang="nav-projects", onclick="onepageTrigger('#pageWebTrigger')") Web
+                    a(data-lang="nav-projects", onclick="$('.main').moveTo(4)") Web
                 li.sidebar-nav-item
-                    a(data-lang="nav-projects", onclick="onepageTrigger('#pageDesignTrigger')") Design
+                    a(data-lang="nav-projects", onclick="$('.main').moveTo(6)") Design
                 li.sidebar-nav-item
-                    a(data-lang="nav-contact", onclick="onepageTrigger('#pageContactTrigger')") Contact
+                    a(data-lang="nav-contact", onclick="$('.main').moveTo(8)") Contact
         // Header
         #splash.splash.centre-xy
             img.logo(src="img/logo_min.svg")
@@ -47,209 +48,242 @@ html(lang="en")
                     a.btn-lang(data-sel="fr") Française
                 svg.load-line()
                     line(x1="0" y1="0" x2="100%" y2="0")
-        #view
+        //#view
             #frame
-                #landing.full-section.centre-y.op-section
-                    div.container.text-center
-                        img#logo.logo.mb-5(src="img/logo.svg")
-                // Branding
-                #brand-text.full-section.centre-xy.op-section
-                    .text-wrapper
-                        h2.tw1 
-                            span.tw4(data-lang="brand-t1") creators 
-                            span(data-lang="brand-t2") of bespoke brands
-                        hr.hr-small.tw2(align="left")
-                        p.tw3(data-lang="brand-p1") From Olympic athletes to internationally accredited doctors to disruptive business consultants
-                        p.mb-4.tw3(data-lang="brand-p2") Tourmalet Media helps distinguished individuals and brands present themselves as such.
-                        //a.scrolly.more-link.tw3
-                            i.fa.fa-angle-right
-                            span more
-                #brand-content.full-section.centre-y.of-no.op-section
-                    .container#container-all.text-center
-                        .row
-                            .col-md-4.col-6
-                                a
-                                    img.mb-5.design-icon.tw1(src="img/icons/mep.svg", data-desc="Brand development for ME P haute couture photography",data-lang="brand-mep")
-                            .col-md-4.col-6
-                                a
-                                    img.mb-5.design-icon.tw1(src="img/icons/hs.svg", data-desc="Project with Olympic Medalist, Henri Schoeman, to develop his personal trademark.",data-lang="brand-hs")
-                            .col-md-4.col-6
-                                a
-                                    img.mb-5.design-icon.tw1(src="img/icons/im.svg", data-desc="Branding consultation for boutique hotel and polo club, Inyanda Manor",data-lang="brand-im")
-                            .col-md-4.col-6
-                                a
-                                    img.design-icon.tw1(src="img/icons/bw.svg", data-desc="Branding project for high profile brittish Olympic champion. Further details may contractually not yet be disclosed.",data-lang="brand-bw")
-                            .col-md-4.col-6
-                                a
-                                    img.design-icon.tw1(src="img/icons/vl.svg", data-desc="Brand consultation for Vincent Luis and his French brand VLFR.",data-lang="brand-vl")
-                            .col-md-4.col-6
-                                a
-                                    img.design-icon.tw1(src="img/icons/dogma.svg", data-desc="Dogma corporate image creation as well as web development",data-lang="design-dogma")
-                    .container#container-one.centre-xy
-                        a#btnCloseDesign
-                                i.fa.fa-2x.fa-times
-                        img#brand-image.elems(src="img/icons/hs.svg")
-                        .vert-spacer.elems.m-5
-                        p.elems#brand-paragraph.text-gold This is a short description of the project conducted
-                //Web
-                #web-text.full-section.centre-xy.op-section
-                    .text-wrapper
-                        h2.tw1
-                            span.tw4(data-lang="web-t1") Developers 
-                            span(data-lang="web-t2") creating modern web experiences
-                        hr.hr-small.tw2(align="left")
-                        p.tw3(data-lang="web-p1") Forward thinking aesthtics built on future proof platforms
-                        p.tw3(data-lang="web-p2") Tourmalet Media implements the latest web technologies to create mobile first experiences with optimal SEO performance
-                        p.tw3.text-muted HTML5 | Javascript | Jquery | SASS | Knockout | PHP | Docker
-                        //a.js-scroll-trigger.more-link.tw3(href="#brand-content")
-                            i.fa.fa-angle-right
-                            span more        
-                #web-content.op-section.centre-xy
-                    .container-standard.centre-xy
-                        .carousel#carousel-web.slide(data-ride='carousel',data-interval="false")
-                                    // Indicators
-                                    ul.carousel-indicators
-                                        li.active(data-target='#carousel-erb', data-slide-to='0')
-                                        li(data-target='#carousel-web', data-slide-to='1')
-                                        li(data-target='#carousel-web', data-slide-to='2')
-                                        li(data-target='#carousel-web', data-slide-to='3')
-                                        li(data-target='#carousel-web', data-slide-to='4')
-                                        li(data-target='#carousel-web', data-slide-to='5')
-                                    // The slideshow
-                                    .carousel-inner
-                                        //a.carou-controller(href='#carousel-web', data-slide='next')
-                                            i.icon-arrow-right 
-                                        .carousel-item.active.container
-                                            .row.text-center
-                                                .col-md-6
-                                                    img.web-preview(src="img/cavemancafe.png")
-                                                .col-md-6.text-right
-                                                    h2 Caveman Cafe
-                                                    h4 Web project for Conrad Stoltz
-                                                    br
-                                                    p High profile project for the collaboration of 7 x Triathlon World Champion and Specialized Stellenbosch.
-                                                    a.btn.btn-primary(href='#carousel-web', data-slide='next') View Site
-                                        .carousel-item
-                                            .row.text-center
-                                                .col-md-6
-                                                    img.web-preview(src="img/digivate.png")
-                                                .col-md-6.text-right
-                                                    h2 Digivate
-                                                    h4 Web partner for Digivate business sollutions
-                                                    br
-                                                    p Complete development for an official SAP partner who placed a high premium on a professional online presence
-                                                    a.btn.btn-primary(href='#carousel-web', data-slide='next') View Site
-                                        .carousel-item
-                                            .row.text-center
-                                                .col-md-6
-                                                    img.web-preview(src="img/mca.png")
-                                                .col-md-6.text-right
-                                                    h2 Marizaan Carstens
-                                                    h4 Web development and Search Engine Optimization
-                                                    br
-                                                    p The project lead to the business reaching Google's front search page in the highly competitive space of health and medicine
-                                                    a.btn.btn-primary View Site
-                                        .carousel-item
-                                            .row.text-center
-                                                .col-md-6
-                                                    img.web-preview(src="img/helderberg.png")
-                                                .col-md-6.text-right
-                                                    h2 Helderberg Pain Clinic
-                                                    h4 New web development
-                                                    br
-                                                    p Tasked with creating a website for the practice of the internationally renowned physicians at the Helderberg Pain Clinic
-                                                    a.btn.btn-primary View Site
-                                    // Left and right controls
-                                    a.carousel-control-prev(href='#carousel-web', data-slide='prev')
-                                        span.carousel-control-prev-icon
-                                    a.carousel-control-next(href='#carousel-web', data-slide='next')
-                                        span.carousel-control-next-icon
-                //Design
-                #design-text.full-section.centre-xy.op-section
-                    .text-wrapper
-                        h2.tw1(data-lang="intro-t2")
-                            span.tw4 Designers 
-                            span inspired by reduction
-                        hr.hr-small.tw2(align="left")
-                        p.tw3(data-lang="intro-p3") Tourmalet Media believes that a brand is defined by that which it refuses.
-                        p.tw3(data-lang="intro-p4") True to our European roots- we aim to consistently create minimalist aesthetics that communicate unencumbered purpose
-                        //a.js-scroll-trigger.more-link.tw3(href="#brand-content")
-                            i.fa.fa-angle-right
-                            span more        
-                #design-content.centre-y.op-section
-                    .container-standard
-                        .design-cover.p-5
-                            a#btn-expand.btn.btn-halo.pull-right(data-lang="showcase-button")
-                                .svg-wrapper
-                                    svg(height='40' width='250' xmlns='http://www.w3.org/2000/svg')
-                                        rect.shape.theme-light(height='40' width='250')
-                                    .text.theme-light Projects
-                        .carousel#carousel-showcase.slide.h-100(data-ride='carousel',data-interval="false")
-                                    // Indicators
-                                    ul.carousel-indicators
-                                        li.active(data-target='#carousel-showcase', data-slide-to='0')
-                                        li(data-target='#carousel-showcase', data-slide-to='1')
-                                        li(data-target='#carousel-showcase', data-slide-to='2')
-                                        li(data-target='#carousel-showcase', data-slide-to='3')
-                                        li(data-target='#carousel-showcase', data-slide-to='4')
-                                        li(data-target='#carousel-showcase', data-slide-to='5')
-                                    // The slideshow
-                                    .carousel-inner.h-100
-                                        #item1.carousel-item.active
-                                            h4.w-50(data-lang="showcase-item1") Featured on the custom bike of Olympic Medalist, Henri Schoeman
-                                        #item2.carousel-item
-                                        #item3.carousel-item
-                                            h4.w-50(data-lang="showcase-item3") Brand identity and design for Red Bull ambassador, Richard Murray
-                                        #item4.carousel-item
-                                            h4.w-50 
-                                        #item5.carousel-item
-                                            h4.w-50(data-lang="showcase-item5") Brand identity and design for The Nunez Hurley Academy
-                                        #item6.carousel-item
-                                            h4.w-50
-                                        #item7.carousel-item
-                                            h4.w-50(data-lang="showcase-item7") Web and design projects for 7 x triathlon world champion, Conrad Stoltz
-                                        #item8.carousel-item
-                                    // Left and right controls
-                                    a.carousel-control-prev(href='#carousel-showcase', data-slide='prev')
-                                        span.carousel-control-prev-icon
-                                    a.carousel-control-next(href='#carousel-showcase', data-slide='next')
-                                        span.carousel-control-next-icon
+        //main wrapper for one page scroll
+        #main
+          #landing.full-section.centre-y.op-section
+              div.container.text-center
+                  img#logo.logo.mb-5(src="img/logo.svg")
+          // Branding
+          #brand-text.full-section.centre-xy.op-section
+              .text-wrapper
+                  h2.tw1 
+                      span.tw4(data-lang="brand-t1") creators 
+                      span(data-lang="brand-t2") of bespoke digital solutions
+                  hr.hr-small.tw2(align="left")
+                  p.tw3(data-lang="brand-p1") From Olympic athletes to internationally accredited doctors to disruptive business consultants
+                  p.mb-4.tw3(data-lang="brand-p2") Tourmalet Media helps distinguished individuals and brands present themselves as such.
+                  //a.scrolly.more-link.tw3
+                      i.fa.fa-angle-right
+                      span more
+          #brand-content.full-section.centre-y.of-no.op-section
+              .container#container-all.text-center
+                  .row
+                      .col-md-4.col-6
+                          a
+                              img.mb-5.design-icon.tw1(src="img/icons/mep.svg", data-desc="Brand development for ME P haute couture photography",data-lang="brand-mep")
+                      .col-md-4.col-6
+                          a
+                              img.mb-5.design-icon.tw1(src="img/icons/hs.svg", data-desc="Project with Olympic Medalist, Henri Schoeman, to develop his personal trademark.",data-lang="brand-hs")
+                      .col-md-4.col-6
+                          a
+                              img.mb-5.design-icon.tw1(src="img/icons/im.svg", data-desc="Branding consultation for boutique hotel and polo club, Inyanda Manor",data-lang="brand-im")
+                      .col-md-4.col-6
+                          a
+                              img.design-icon.tw1(src="img/icons/bw.svg", data-desc="Branding project for high profile brittish Olympic champion. Further details may contractually not yet be disclosed.",data-lang="brand-bw")
+                      .col-md-4.col-6
+                          a
+                              img.design-icon.tw1(src="img/icons/vl.svg", data-desc="Brand consultation for Vincent Luis and his French brand VLFR.",data-lang="brand-vl")
+                      .col-md-4.col-6
+                          a
+                              img.design-icon.tw1(src="img/icons/dogma.svg", data-desc="Dogma corporate image creation as well as web development",data-lang="design-dogma")
+              .container#container-one.centre-xy
+                  a#btnCloseDesign
+                          i.fa.fa-2x.fa-times
+                  img#brand-image.elems(src="img/icons/hs.svg")
+                  .vert-spacer.elems.m-5
+                  p.elems#brand-paragraph.text-gold This is a short description of the project conducted
+          //Web
+          #web-text.full-section.centre-xy.op-section
+              .text-wrapper
+                  h2.tw1
+                      span.tw4(data-lang="web-t1") Developers 
+                      span(data-lang="web-t2") creating progressive web experiences
+                  hr.hr-small.tw2(align="left")
+                  p.tw3(data-lang="web-p1") Forward thinking aesthtics built on future proof platforms
+                  p.tw3(data-lang="web-p2") Tourmalet Media full stack web applications built on the latest web technologies
+                  p.tw3.text-muted HTML5 | VueJs | PostgreSql | Linux Web Servers | Node.js | Digital Ocean Droplets
+                  //a.js-scroll-trigger.more-link.tw3(href="#brand-content")
+                      i.fa.fa-angle-right
+                      span more        
+          #web-content.op-section.centre-xy
+              .container-standard.centre-xy
+                  .carousel#carousel-web.slide(data-ride='carousel',data-interval="false")
+                              // Indicators
+                              ul.carousel-indicators
+                                  li.active(data-target='#carousel-erb', data-slide-to='0')
+                                  li(data-target='#carousel-web', data-slide-to='1')
+                                  li(data-target='#carousel-web', data-slide-to='2')
+                                  li(data-target='#carousel-web', data-slide-to='3')
+                                  li(data-target='#carousel-web', data-slide-to='4')
+                                  li(data-target='#carousel-web', data-slide-to='5')
+                              // The slideshow
+                              .carousel-inner
+                                  //a.carou-controller(href='#carousel-web', data-slide='next')
+                                      i.icon-arrow-right 
+                                  .carousel-item.container.active
+                                      .row.text-center
+                                          .col-md-6
+                                              img.web-preview(src="img/digivate.png")
+                                          .col-md-6.text-right
+                                              h2 Digivate
+                                              h4 Web partner for Digivate business sollutions
+                                              br
+                                              p Complete development for an official SAP partner who placed a high premium on a professional online presence
+                                              a.btn.btn-primary.gotoSite(href='https://www.digivate.co.za', target="_blank") View Site
+                                  .carousel-item.container
+                                      .row.text-center
+                                          .col-md-6
+                                              img.web-preview(src="img/signaturestone.png")
+                                          .col-md-6.text-right
+                                              h2 Signature Stone
+                                              h4 Web application
+                                              br
+                                              p An industry first complete online quoting system for Signature Stone granite suppliers
+                                              a.btn.btn-primary.gotoSite(href='https://www.signaturestone.co.za', target="_blank") View Site  
+                                  .carousel-item.container
+                                      .row.text-center
+                                          .col-md-6
+                                              img.web-preview(src="img/swift.png")
+                                          .col-md-6.text-right
+                                              h2 Swift Dry Cleaning
+                                              h4 Uber for your laundry
+                                              br
+                                              p Helping transform an established brick and mortar store into a tech-centric digital business
+                                              a.btn.btn-primary.gotoSite(href='http://www.swiftdrycleaners.co.za/', target="_blank") View Site  
+                                  .carousel-item.container
+                                      .row.text-center
+                                          .col-md-6
+                                              img.web-preview(src="img/stoltztrails.png")
+                                          .col-md-6.text-right
+                                              h2 Stoltz Trails
+                                              h4 Online gallery
+                                              br
+                                              p Web partner for the trail building company founded by 7 x World Champion- Conrad Stoltz
+                                              a.btn.btn-primary.gotoSite(href='https://www.stoltztrails.com', target="_blank") View Site
+                                  .carousel-item.container
+                                      .row.text-center
+                                          .col-md-6
+                                              img.web-preview(src="img/cupboardfactory.png")
+                                          .col-md-6.text-right
+                                              h2 Cupboard Factory
+                                              h4 Brand design and web development
+                                              br
+                                              p Ecommerce platform for an innovative company aiming to bring the IKEA model to South Africa
+                                              a.btn.btn-primary.gotoSite(href='https://cupboardfactory.co.za', target="_blank") View Site
+                                  .carousel-item.container
+                                      .row.text-center
+                                          .col-md-6
+                                              img.web-preview(src="img/mca.png")
+                                          .col-md-6.text-right
+                                              h2 Marizaan Carstens Audiology
+                                              h4 Web development and Search Engine Optimization
+                                              br
+                                              p The project lead to the business reaching Google's front search page in the highly competitive space of health and medicine
+                                              a.btn.btn-primary.gotoSite(href="https://www.marizaancarstens.co.za", target="_blank") View Site
+                                  .carousel-item.container
+                                      .row.text-center
+                                          .col-md-6
+                                              img.web-preview(src="img/helderberg.png")
+                                          .col-md-6.text-right
+                                              h2 Helderberg Pain Clinic
+                                              h4 New web development
+                                              br
+                                              p Tasked with creating a website for the practice of the internationally renowned physicians at the Helderberg Pain Clinic
+                                              a.btn.btn-primary.gotoSite(herf="https://www.helderbergpainclinic.co.za", target="_blank") View Sites
+                              // Left and right controls
+                              a.carousel-control-prev(href='#carousel-web', data-slide='prev')
+                                  span.carousel-control-prev-icon
+                              a.carousel-control-next(href='#carousel-web', data-slide='next')
+                                  span.carousel-control-next-icon
+          //Design
+          #design-text.full-section.centre-xy.op-section
+              .text-wrapper
+                  h2.tw1(data-lang="intro-t2")
+                      span.tw4 Designers 
+                      span inspired by reduction
+                  hr.hr-small.tw2(align="left")
+                  p.tw3(data-lang="intro-p3") Tourmalet Media believes that a brand is defined by that which it refuses.
+                  p.tw3(data-lang="intro-p4") True to our European roots- we aim to consistently create minimalist aesthetics that communicate unencumbered purpose
+                  //a.js-scroll-trigger.more-link.tw3(href="#brand-content")
+                      i.fa.fa-angle-right
+                      span more        
+          #design-content.centre-y.op-section
+              .container-standard
+                  .design-cover.p-5
+                      a#btn-expand.btn.btn-halo.pull-right(data-lang="showcase-button")
+                          .svg-wrapper
+                              svg(height='40' width='250' xmlns='http://www.w3.org/2000/svg')
+                                  rect.shape.theme-light(height='40' width='250')
+                              .text.theme-light Projects
+                  .carousel#carousel-showcase.slide.h-100(data-ride='carousel',data-interval="false")
+                              // Indicators
+                              ul.carousel-indicators
+                                  li.active(data-target='#carousel-showcase', data-slide-to='0')
+                                  li(data-target='#carousel-showcase', data-slide-to='1')
+                                  li(data-target='#carousel-showcase', data-slide-to='2')
+                                  li(data-target='#carousel-showcase', data-slide-to='3')
+                                  li(data-target='#carousel-showcase', data-slide-to='4')
+                                  li(data-target='#carousel-showcase', data-slide-to='5')
+                              // The slideshow
+                              .carousel-inner.h-100
+                                  #item1.carousel-item.active
+                                      h4.w-50(data-lang="showcase-item1") Featured on the custom bike of Olympic Medalist, Henri Schoeman
+                                  #item2.carousel-item
+                                  #item3.carousel-item
+                                      h4.w-50(data-lang="showcase-item3") Brand identity and design for Red Bull ambassador, Richard Murray
+                                  #item4.carousel-item
+                                      h4.w-50 
+                                  #item5.carousel-item
+                                      h4.w-50(data-lang="showcase-item5") Brand identity and design for The Nunez Hurley Academy
+                                  #item6.carousel-item
+                                      h4.w-50
+                                  #item7.carousel-item
+                                      h4.w-50(data-lang="showcase-item7") Web and design projects for 7 x triathlon world champion, Conrad Stoltz
+                                  #item8.carousel-item
+                              // Left and right controls
+                              a.carousel-control-prev(href='#carousel-showcase', data-slide='prev')
+                                  span.carousel-control-prev-icon
+                              a.carousel-control-next(href='#carousel-showcase', data-slide='next')
+                                  span.carousel-control-next-icon
 
-                //Contact
-                section#contact.centre-y.op-section
-                    .container
-                        .row.text-center
-                            .col-md-4.mb-5
-                                img.logo.tw1(src="img/logo_min.svg")
-                            .col-md-4.mb-5
-                                a(href="mailto:dehanlouw@icloud.com")
-                                    i.icon.icon-envelope.tw1
-                            .col-md-4.mb-5
-                                a(onclick="onepageTrigger('#pageTopTrigger')")
-                                    i.icon.icon-arrow-up.tw1 
-        #radioWrap
-            ul#radio
-                li.tw1#pageTopTrigger
-                li.tw1#pageBrandTrigger
-                li.tw1
-                li.tw1#pageWebTrigger
-                li.tw1
-                li.tw1#pageDesignTrigger
-                li.tw1
-                li.tw1#pageContactTrigger
-            span#radioOn.tw1
-                // Footer
-                //footer.footer.text-center
-                    .container-full
-                        a.text-muted.small.mb-0(href="mailto:dehanlouw@icloud.com", data-lang="copyright") Copyright © Tourmalet Media 2018
-                // Scroll to Top Button
-                a.scroll-to-top.rounded.js-scroll-trigger(href="#page-top")
-                    i.fa.fa-angle-up
+          //Contact
+          section#contact.centre-y.op-section
+              .container
+                  .row.text-center
+                      .col-md-4.mb-5
+                          img.logo.tw1(src="img/logo_min.svg")
+                      .col-md-4.mb-5
+                          a(href="mailto:dehan@tourmaletmedia.com")
+                              i.icon.icon-envelope.tw1
+                      .col-md-4.mb-5
+                          a.js-scroll-trigger(onclick="$('.main').moveTo(1)")
+                              i.icon.icon-arrow-up.tw1 
+          //#radioWrap
+              ul#radio
+                  li.tw1#pageTopTrigger
+                  li.tw1#pageBrandTrigger
+                  li.tw1
+                  li.tw1#pageWebTrigger
+                  li.tw1
+                  li.tw1#pageDesignTrigger
+                  li.tw1
+                  li.tw1#pageContactTrigger
+              span#radioOn.tw1
+                  // Footer
+                  //footer.footer.text-center
+                      .container-full
+                          a.text-muted.small.mb-0(href="mailto:dehanlouw@icloud.com", data-lang="copyright") Copyright © Tourmalet Media 2018
+                  // Scroll to Top Button
+                  a.scroll-to-top.rounded.js-scroll-trigger(href="#page-top")
+                      i.fa.fa-angle-up
             
             
         // Bootstrap core JavaScript
         script(src="vendor/jquery/jquery.js")
-        script(src="vendor/onepage/onepage.js")
+        //script(src="vendor/onepage/onepage.js")
+        script(src="vendor/onepage-scroll/jquery.onepage-scroll.min.js")
         script(src="vendor/imagesloaded/imagesloaded.pkgd.min.js")
         script(src="vendor/bootstrap/js/bootstrap.min.js")
         // Plugin JavaScript

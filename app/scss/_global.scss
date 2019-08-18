@@ -4,7 +4,17 @@ html {
   height: 100%;
  position: relative;
  z-index: 0;
- overflow-y: hidden;
+// overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+  width: 100%;
+  height: 100%;
+ position: relative;
+ z-index: 0;
+// overflow-y: hidden;
     margin: 0;
     padding: 0;
 }
@@ -13,9 +23,9 @@ body {
   @include body-font;
 }
 
-.no-scroll{
-    overflow: hidden;
-}
+//.no-scroll{
+//    overflow: hidden;
+//}
 
 // Custom Button Size
 .btn-xl {

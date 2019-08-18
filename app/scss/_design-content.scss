@@ -34,9 +34,16 @@
         background-image: url(../img/projects/cz_sm_1.png);
     }
     
-    //Carousel items for large screens
     .carousel #item8{
         background-image: url(../img/projects/cz_sm_2.png);
+    }
+
+    .carousel #item9{
+        background-image: url(../img/projects/vs_sm_1.png);
+    }
+  
+    .carousel #item10{
+        background-image: url(../img/projects/vs_sm_2.png);
     }
     
     .design-cover{
@@ -84,6 +91,14 @@
 
         .carousel #item8{
             background-image: url(../img/projects/cz_lg_2.png);
+        }
+      
+        .carousel #item9{
+          background-image: url(../img/projects/vs_lg_1.png);
+        }
+  
+        .carousel #item10{
+          background-image: url(../img/projects/vs_lg_2.png);
         }
         
         .design-cover{
